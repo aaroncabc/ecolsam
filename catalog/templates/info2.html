@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECOLSAM</title>
+    <link rel="stylesheet" href="{% static 'catalog/css/stylein2.css' %}">
+    <script src="{% static 'catalog/js/code.js'%}"></script>
+</head>
+<body>
+    <section>
+        <div class=" head">
+            <a href="#" class="logo"><img src="{% static 'catalog/imagenes/LOGO_ECO-removebg-preview.png' %}" width="80"
+                height="75"></a>
+            <ul>
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="indexb.html">Foro</a></li>
+                <li><a href="#">Test</a></li>
+                <li><a href="#">Huella COLSAM</a></li>
+                <li><a href="#">Juegos</a></li>
+            </ul>
+        </div>
+        <header class="content header">
+           
+            <h2 class="title">Productos </h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas omnis ratione voluptatem co
+              rrupti corporis obcaecati ducimus illum dolores incidunt sequi nisi ipsum fugiat ea provident
+               possimus nostrum, vero ex quo!
+               Lorem, ipsum dolor sit amet consectetur adipisicing elit. A possimus, ipsa pariatur quia, non
+                reprehenderit odit maxime iusto qui, placeat provident molestias ullam neque quaerat exercitationem 
+                ratione deleniti ducimus impedit?Lorem ipsum dolor sit amet consectetur adipisicing elit. Error autem voluptates corporis consequatur nobis,
+                 reprehenderit libero ducimus esse ipsum blanditiis cum hic molestiae sed voluptas at, cumque, dignissimos optio nostrum!
+            </p>
+            
+        </header>
+        <section class="content about">
+           
+            <h2 class="title">Ventas</h2>
+            <p>
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique delectus recusandae 
+               ex animi tempora, at earum quo, sapiente maiores doloremque qui asperiores minima 
+               consequatur quisquam a incidunt quia dignissimos? Alias!   web.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                Consectetur vitae perferendis repellat ipsum. Quasi maiore
+                s maxime ab. Quia dolore sit est dolorem sed placeat eius ab, ipsum dignissimos pariatur at!
+            </p>
+
+        </section>
+        <footer class="pie-pagina " id="Contacto">
+            <div class="grupo-1">
+                <div class="box">
+                    <figure>
+                        <a href="{% url 'index' %}">
+                            <img src="{% static 'catalog/imagenes/LOGO_ECO-removebg-preview.png' %}" weidth="150" height="150" alt="Logo de Make-Up">
+                        </a>
+                    </figure>
+                </div>
+                <div class="box">
+                    <h2>CONTACTANOS</h2>
+                    <div class="red-social">
+                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-instagram"></a>
+                        <a href="#" class="fa fa-twitter"></a>
+                        <a href="#" class="fa fa-whatsapp"></a>
+                    
+                    </div>
+                </div>
+            
+            </div>
+            <div class="grupo-2">
+            <small>&copy; 2023 <b>ECOLSAM-PRAE</b> - Todos los Derechos Reservados.</small>
+            </div>
+            </footer>
+    </section>
+</body>
+</html>
