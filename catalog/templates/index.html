@@ -1,124 +1,71 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ECOLSAM</title>
-    <link rel="stylesheet" href="{% static 'catalog/css/style.css' %}">
-</head>
-<body>
-    <section>
-        <header class="nav">
-            <a href="#" class="logo"><img src="{% static 'catalog/imagenes/LOGO_ECO-removebg-preview.png' %}" width="80"
-                height="75"></a>
-            <ul>
-                <li><a href="{% url 'index' %}">Inicio</a></li>
-                <li><a href="#">Foro</a></li>
-                <li><a href="#">Test</a></li>
-                <li><a href="#">Huella COLSAM</a></li>
-                <li><a href="#">Juegos</a></li>
-            </ul>
-        </header>
-        <script src="{% static 'catalog/js/code.js'%}"></script>
-        
-        <div class="content">
-            <div class="textBox">
-                <h2>Bienvenidos a <br> <span>ECOLSAM-PRAE</span></h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, repudiandae. Ducimus explicabo provident
-                     fugiat accusantium, 
-                    iure, id, eum molestias ab sed sequi cum animi vel! Vel mollitia quod harum sit!</p>
-                    <a href="{% url 'info' %}">Saber más</a>
-            </div>
-            <div class="imgBox">
-                <img src="{% static 'catalog/imagenes/PLANTA1-removebg-preview.png' %}">
-            </div>
-        </div>
-    </section>
-    <section class="content hc">
-        <div class="def1">
-        <h2>Huella de carbono</h2>
-        <h3>¿Qué es?</h3>
-        <p>
-            Disponibles desde productos como labiales en distintos tonos, 
-             sombras de gran pigmentación, brochas de alta calidad, bases 
-             para cualquier tono de piel y rímel con vitaminas que ayudan 
-             al crecimiento de las pestañ Lorem ipsum dolor, sit amet consectetur
-             adipisicing elit. Iure, voluptatibus quia? Magni sed modi iste, vitae 
-            dolorum quibusdam at perspiciatis repellat beatae recusandae esse in distinctio 
-            atque sit, tenetur exercitationem!
-        </p>
-        </div>
-    </section>
-    <section class="content his">
-        <div class="def2">
-        <h3>Historia</h3>
-        <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet quo voluptas
-             est quae voluptate ex? Deserunt voluptatum corporis ex ducimus sequi impedit
-              esse nobis. Praesentium neque sit mollitia ducimus doloremque.
-             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta 
-             repellat tempore voluptas necessitatibus delectus provident excepturi.
-            Ipsum minima maxime culpa in dolor, perspiciatis tempora quod, tempore, nam ab officia distinctio.
-        </p>
-        </div>
-    </section>
-    <section class="content imp">
-        <div class="def3">
-        <h3>¿Cuál es su importancia?</h3>
-        <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet quo voluptas
-             est quae voluptate ex? Deserunt voluptatum corporis ex ducimus sequi impedit
-              esse nobis. Praesentium neque sit mollitia ducimus doloremque.
-             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta 
-             repellat tempore voluptas necessitatibus delectus provident excepturi.
-            Ipsum minima maxime culpa in dolor, perspiciatis tempora quod, tempore, nam ab officia distinctio.
-        </p>
-        </div>
-    </section>
-    <section class="content impl">
-        <div class="def4">
-        <h3>Implementación en la vida cotidiana</h3>
-        <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet quo voluptas
-             est quae voluptate ex? Deserunt voluptatum corporis ex ducimus sequi impedit
-              esse nobis. Praesentium neque sit mollitia ducimus doloremque.
-             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta 
-             repellat tempore voluptas necessitatibus delectus provident excepturi.
-            Ipsum minima maxime culpa in dolor, perspiciatis tempora quod, tempore, nam ab officia distinctio.
-        </p>
+{% block content %}
+<div class="content">
+    <div class="textBox">
+        <h2>Bienvenidos a <br> <span>ECOLSAM-PRAE</span></h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, repudiandae. Ducimus explicabo provident
+             fugiat accusantium, 
+            iure, id, eum molestias ab sed sequi cum animi vel! Vel mollitia quod harum sit!</p>
+            <a href="{% url 'info' %}">Saber más</a>
     </div>
-    </section>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="{% static 'catalog/css/style.css' %}">
-        <script src="https://kit.fontawesome.com/1e1279f790.js" crossorigin="anonymous"></script>
-    </head>
-    <footer class="pie-pagina " id="Contacto">
-        <div class="grupo-1">
-            <div class="box">
-                <figure>
-                    <a href="{% url 'index' %}">
-                        <img src="{% static 'catalog/imagenes/LOGO_ECO-removebg-preview.png' %}" weidth="150" height="150" alt="Logo de Make-Up">
-                    </a>
-                </figure>
-            </div>
-            <div class="box">
-                <h2>CONTACTANOS</h2>
-                <div class="red-social">
-                    <a href="#" class="fa fa-facebook"></a>
-                    <a href="#" class="fa fa-instagram"></a>
-                    <a href="#" class="fa fa-twitter"></a>
-                    <a href="#" class="fa fa-whatsapp"></a>
-                
-                </div>
-            </div>
-        
-        </div>
-        <div class="grupo-2">
-        <small>&copy; 2023 <b>ECOLSAM-PRAE</b> - Todos los Derechos Reservados.</small>
-        </div>
-        </footer>
-</body>
-</html>
+    <div class="imgBox">
+        <img src="{% static 'catalog/imagenes/PLANTA1-removebg-preview.png' %}">
+    </div>
+</div>
+</section>
+<section class="content hc">
+<div class="def1">
+<h2>Huella de carbono</h2>
+<h3>¿Qué es?</h3>
+<p>
+    Disponibles desde productos como labiales en distintos tonos, 
+     sombras de gran pigmentación, brochas de alta calidad, bases 
+     para cualquier tono de piel y rímel con vitaminas que ayudan 
+     al crecimiento de las pestañ Lorem ipsum dolor, sit amet consectetur
+     adipisicing elit. Iure, voluptatibus quia? Magni sed modi iste, vitae 
+    dolorum quibusdam at perspiciatis repellat beatae recusandae esse in distinctio 
+    atque sit, tenetur exercitationem!
+</p>
+</div>
+</section>
+<section class="content his">
+<div class="def2">
+<h3>Historia</h3>
+<p>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet quo voluptas
+     est quae voluptate ex? Deserunt voluptatum corporis ex ducimus sequi impedit
+      esse nobis. Praesentium neque sit mollitia ducimus doloremque.
+     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta 
+     repellat tempore voluptas necessitatibus delectus provident excepturi.
+    Ipsum minima maxime culpa in dolor, perspiciatis tempora quod, tempore, nam ab officia distinctio.
+</p>
+</div>
+</section>
+<section class="content imp">
+<div class="def3">
+<h3>¿Cuál es su importancia?</h3>
+<p>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet quo voluptas
+     est quae voluptate ex? Deserunt voluptatum corporis ex ducimus sequi impedit
+      esse nobis. Praesentium neque sit mollitia ducimus doloremque.
+     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta 
+     repellat tempore voluptas necessitatibus delectus provident excepturi.
+    Ipsum minima maxime culpa in dolor, perspiciatis tempora quod, tempore, nam ab officia distinctio.
+</p>
+</div>
+</section>
+<section class="content impl">
+<div class="def4">
+<h3>Implementación en la vida cotidiana</h3>
+<p>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet quo voluptas
+     est quae voluptate ex? Deserunt voluptatum corporis ex ducimus sequi impedit
+      esse nobis. Praesentium neque sit mollitia ducimus doloremque.
+     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta 
+     repellat tempore voluptas necessitatibus delectus provident excepturi.
+    Ipsum minima maxime culpa in dolor, perspiciatis tempora quod, tempore, nam ab officia distinctio.
+</p>
+</div>
+</section>
+{% endblock %}

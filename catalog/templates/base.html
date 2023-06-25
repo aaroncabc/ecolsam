@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'catalog/css/mainStyle.css' %}">
+  <script src="https://kit.fontawesome.com/1e1279f790.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+          <li class="logo"><div href="#"><img src="{% static 'catalog/imagenes/LOGO_ECO-removebg-preview.png' %}" alt="Logo"></div></li>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Foro</a></li>
+        <li><a href="#">Test</a></li>
+        <li><a href="#">Huella Colsam</a></li>
+        <li><a href="#">Juegos</a></li>
+      </ul>
+    </nav>
+  </header>
+  {% block content %}
+  {% endblock  %}
+  <script src="{% static 'catalog/js/code.js'%}"></script>
+  <footer class="pie-pagina " id="Contacto">
+    <div class="grupo-1">
+        <div class="box">
+            <figure>
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'catalog/imagenes/LOGO_ECO-removebg-preview.png' %}" weidth="150" height="150" alt="Logo de Make-Up">
+                </a>
+            </figure>
+        </div>
+        <div class="box">
+            <h2>CONTACTANOS</h2>
+            <div class="red-social">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-whatsapp"></a>
+            </div>
+        </div>
+    
+    </div>
+    <div class="grupo-2">
+    <small>&copy; 2023 <b>ECOLSAM-PRAE</b> - Todos los Derechos Reservados.</small>
+    </div>
+    </footer>
+
+</body>
+</html>

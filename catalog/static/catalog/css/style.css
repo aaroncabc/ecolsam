@@ -1,17 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300;400;500;600;700;800;900&display=swap');
-*
-{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
 }
-body{
+
+body {
     font-family: 'Merienda', cursive;
 }
-section
-{
+
+section {
     position: relative;
     width: 100%;
     min-height: 100vp;
@@ -22,21 +23,15 @@ section
     background: rgb(210, 223, 189);
 }
 
-.title{
-    margin-bottom: 40px ;
+.title {
+    margin-bottom: 40px;
     font-size: 60px;
     font-weight: 600;
     text-transform: uppercase;
     color: #0f0e0e;
 }
-.contentf {
-    height: 70vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.about{
+
+.about {
     background: url(imagenes/fondo77.jpg) no-repeat center;
     background-size: cover;
     background-attachment: fixed;
@@ -44,9 +39,7 @@ section
     text-align: center;
 }
 
-
-.header
-{
+.header {
     position: absolute;
     top: 0;
     left: 0;
@@ -56,19 +49,23 @@ section
     justify-content: space-between;
     align-items: center;
 }
-header .logo
-{
+
+header .logo {
     position: relative;
     max-width: 80px;
 }
-header ul
-{
+
+header input[type="checkbox"],
+.menu-icon {
+    display: none;
+}
+
+header ul {
     position: relative;
     display: flex;
-
 }
-header ul li a
-{
+
+header ul li a {
     display: inline-block;
     color: rgb(50, 128, 40);
     font-weight: 700;
@@ -76,71 +73,81 @@ header ul li a
     font-size: 19px;
     transition: all 0.5s ease;
 }
-header ul li a:hover{
+
+header ul li a:hover {
     padding: 5px 10px;
     background: rgb(70, 170, 57);
     border-radius: 15px;
     color: #dcf8da;
-
 }
-.content{
+
+.content {
     position: relative;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.content .textBox{
+
+.content .textBox {
     position: relative;
     max-width: 600px;
 }
-.content .textBox h2{
+
+.content .textBox h2 {
     color: rgb(70, 170, 57);
     font-size: 40px;
     line-height: 1.4em;
     font-weight: 500;
 }
-.content .textBox h2 span{
+
+.content .textBox h2 span {
     color: rgb(50, 128, 40);
     font-size: 43px;
     font-weight: 700;
 }
-.content .textBox p{
+
+.content .textBox p {
     color: rgb(62, 92, 10);
     font-size: 20px;
-
 }
-.content .textBox a{
+
+.content .textBox a {
     display: inline-block;
     margin-top: 20px;
     padding: 8px 20px;
     background: rgb(70, 170, 57);
-    color:#dcf8da;
+    color: #dcf8da;
     border-radius: 40px;
     font-weight: 700;
     transition: all 0.5s ease;
 }
-.content .textBox a:hover{
-    background: #dcf8da ;
+
+.content .textBox a:hover {
+    background: #dcf8da;
     color: rgb(70, 170, 57);
 }
-.nav{
+
+.nav {
     transition: all 0.5s ease;
 }
+
 .pie-pagina {
     width: 100%;
     background-color: rgb(180, 248, 159);
 }
+
 .pie-pagina .grupo-1 {
     width: 100%;
     max-width: 1200px;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 50px;
     padding: 45px 0px;
 }
-.pie-pagina .grupo-1 .box figure{
+
+.pie-pagina .grupo-1 .box figure {
     width: 100%;
     height: 100px;
     display: flex;
@@ -148,16 +155,16 @@ header ul li a:hover{
     align-items: center;
 }
 
-
 .pie-pagina .grupo-1 .box h2 {
-    color: rgb(122, 255, 189);
+    color: rgb(35, 138, 43);
     margin-bottom: 15px;
 }
-.pie-pagina .grupo-1 .box p{
+
+.pie-pagina .grupo-1 .box p {
     color: rgb(78, 170, 78);
-  
 }
-.pie-pagina .grupo-1 .red-social a{
+
+.pie-pagina .grupo-1 .red-social a {
     display: inline-block;
     text-decoration: none;
     width: 45px;
@@ -169,12 +176,50 @@ header ul li a:hover{
     text-align: center;
     transition: all 300ms ease;
 }
-.pie-pagina .grupo-1 .red-social a:hover{
+
+.pie-pagina .grupo-1 .red-social a:hover {
     color: rgb(187, 50, 50);
 }
+
 .pie-pagina .grupo-2 {
     background-color: rgb(186, 251, 121);
     padding: 15px 10px;
     text-align: center;
     color: rgb(77, 195, 87);
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .header {
+        padding: 20px;
+    }
+
+    header .logo {
+        max-width: 60px;
+    }
+
+    header ul {
+        display: none;
+    }
+
+    header input[type="checkbox"] {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+        font-size: 22px;
+    }
+
+    .content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .content .textBox {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
 }
