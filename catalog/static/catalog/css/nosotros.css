@@ -246,7 +246,7 @@ input[type="radio"] {
     display: none;
 }
 
- .media-icons img{
+.media-icons img{
    
     transition: all 0.3s ease;
     cursor: pointer;
