@@ -1,80 +1,31 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ECOLSAM</title>
-    <link rel="stylesheet" href="{% static 'catalog/css/style.css' %}">
-    <script src="https://kit.fontawesome.com/1e1279f790.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    <section>
-        <header class="nav">
-            <a href="#" class="logo"><img src="{% static 'catalog/imagenes/LOGO_ECO-removebg-preview.png' %}" width="80"
-                height="75"></a>
-            <ul>
-                <li><a href="{% url 'index' %}">Inicio</a></li>
-                <li><a href="#">Foro</a></li>
-                <li><a href="#">Test</a></li>
-                <li><a href="#">Huella COLSAM</a></li>
-                <li><a href="#">Juegos</a></li>
-            </ul>
-        </header>
-        <script src="{% static 'catalog/js/code.js'%}"></script>
-    </section>
-    <section class="content hc">
-        <div class="def1">
-        <h2>Productos</h2>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas omnis ratione voluptatem co
-              rrupti corporis obcaecati ducimus illum dolores incidunt sequi nisi ipsum fugiat ea provident
-               possimus nostrum, vero ex quo!
-               Lorem, ipsum dolor sit amet consectetur adipisicing elit. A possimus, ipsa pariatur quia, non
-                reprehenderit odit maxime iusto qui, placeat provident molestias ullam neque quaerat exercitationem 
-                ratione deleniti ducimus impedit?Lorem ipsum dolor sit amet consectetur adipisicing elit. Error autem voluptates corporis consequatur nobis,
-                 reprehenderit libero ducimus esse ipsum blanditiis cum hic molestiae sed voluptas at, cumque, dignissimos optio nostrum!
-        </p>
-        </div>
-    </section>
-    <section class="contentf">
-        <div class="about">
-        <h2 class="title">Ventas</h2>
-        <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet quo voluptas
-             est quae voluptate ex? Deserunt voluptatum corporis ex ducimus sequi impedit
-              esse nobis. Praesentium neque sit mollitia ducimus doloremque.
-             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta 
-             repellat tempore voluptas necessitatibus delectus provident excepturi.
-            Ipsum minima maxime culpa in dolor, perspiciatis tempora quod, tempore, nam ab officia distinctio.
-        </p>
-        </div>
-    </section>
-    <footer class="pie-pagina " id="Contacto">
-        <div class="grupo-1">
-            <div class="box">
-                <figure>
-                    <a href="{% url 'index' %}">
-                        <img src="{% static 'catalog/imagenes/LOGO_ECO-removebg-preview.png' %}" weidth="150" height="150" alt="Logo de Make-Up">
-                    </a>
-                </figure>
-            </div>
-            <div class="box">
-                <h2>CONTACTANOS</h2>
-                <div class="red-social">
-                    <a href="#" class="fa fa-facebook"></a>
-                    <a href="#" class="fa fa-instagram"></a>
-                    <a href="#" class="fa fa-twitter"></a>
-                    <a href="#" class="fa fa-whatsapp"></a>
-                
-                </div>
-            </div>
-        
-        </div>
-        <div class="grupo-2">
-        <small>&copy; 2023 <b>ECOLSAM-PRAE</b> - Todos los Derechos Reservados.</small>
-        </div>
-        </footer>
-</body>
-</html>
+{% block content %}
+<section class="content">
+    <div class="nob">
+    <h2>Productos</h2>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas omnis ratione voluptatem co
+        rrupti corporis obcaecati ducimus illum dolores incidunt sequi nisi ipsum fugiat ea provident
+        possimus nostrum, vero ex quo!
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. A possimus, ipsa pariatur quia, non
+        reprehenderit odit maxime iusto qui, placeat provident molestias ullam neque quaerat exercitationem 
+        ratione deleniti ducimus impedit?Lorem ipsum dolor sit amet consectetur adipisicing elit. Error autem voluptates corporis consequatur nobis,
+        reprehenderit libero ducimus esse ipsum blanditiis cum hic molestiae sed voluptas at, cumque, dignissimos optio nostrum!
+    </p>
+    </div>
+</section>
+<section>
+    <div class="about">
+    <h2 class="title">Ventas</h2>
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet quo voluptas
+         est quae voluptate ex? Deserunt voluptatum corporis ex ducimus sequi impedit
+          esse nobis. Praesentium neque sit mollitia ducimus doloremque.
+         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta 
+         repellat tempore voluptas necessitatibus delectus provident excepturi.
+        Ipsum minima maxime culpa in dolor, perspiciatis tempora quod, tempore, nam ab officia distinctio.
+    </p>
+    </div>
+</section>
+{% endblock %}

@@ -9,8 +9,8 @@
   <header>
     <nav>
       <ul>
-          <li class="logo"><div href="#"><img src="{% static 'catalog/imagenes/LOGO_ECO-removebg-preview.png' %}" alt="Logo"></div></li>
-        <li><a href="#">Inicio</a></li>
+          <li class="logo"><div href="{% url 'index' %}"><img src="{% static 'catalog/imagenes/LOGO_ECO-removebg-preview.png' %}" alt="Logo"></div></li>
+        <li><a href="{% url 'index' %}">Inicio</a></li>
         <li><a href="#">Foro</a></li>
         <li><a href="#">Test</a></li>
         <li><a href="#">Huella Colsam</a></li>
@@ -35,6 +35,7 @@
             <div class="red-social">
                 <a href="#" class="fa fa-facebook"></a>
                 <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-twitter"></a>
                 <a href="#" class="fa fa-whatsapp"></a>
             </div>
         </div>
