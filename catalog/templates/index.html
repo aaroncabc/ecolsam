@@ -1,80 +1,33 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div class="info">
-    <h2 class="heading">Bienvenidos a</h2>
-    <div>&nbsp</div>
-    <div>&nbsp</div>
-    <div>&nbsp</div>
-    <h2 class="heading">ECOLSAM PRAE</h2>
-    <div class="info-container">
-    <div class="info-box">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, repudiandae. Ducimus explicabo provident
-             fugiat accusantium, 
-            iure, id, eum molestias ab sed sequi cum animi vel! Vel mollitia quod harum sit!
-        </p>
-        <div class="button">
-            <a href="{% url 'nosotros' %}">Leer más</a>
+<head>
+    <link rel="stylesheet" href="{% static 'catalog/css/inicio.css' %}">
+</head>
+<section class="Inicio">
+    <div class="inicio-content">
+        <h1>Bienvenidos <span>a</span></h1>
+        <div class="text-animate">
+           <h3>ECOLSAM-PRAE</h3>
         </div>
+        <p>
+            Su uso integra la tecnología en pro del medio ambiente, basado en técnicas que contribuyen
+            a las iniciativas ambientalistas de la institución.
+            <div class="btn-box">
+                <a href="{% url 'nosotros' %}" class="btn">Sobre Nosotros</a>
+                <a href="{% url 'info' %}" class="btn">Aprender</a>
+            </div>
+          
+
+    </div>
+
+    <div class="inicio-sci">
+        <a href="https://www.instagram.com/colsambarranquilla/"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAxpJREFUSEvFlV+IVHUUxz/n3kGlKF+kp2yFCnKR6I+yc0f6AzkzKcRSO/c3/n3pJe0hUNKgCAyiaIuSnnqoh4jVndm1oiCb37UQ1PndjUIENWVJROjFnhJf3HbuibvOLnenGXcJFu/jvd97Pud7zvmdn7DEjyxxfO4MYPNo4cGWJPsQeQpYBz0TUeAcqifV10NRZWKysyL/cVCu5XeryKdATuGqIDHKxa6lFH0C5DHQ1cA/KvpqFMafZ7XzAMXxjeslSWLggp/Ii8e2Nv9YTI9Ko4V1ePod8EDiseF4xZ2Z/W8eoFQPvga2eC195Mdt8ZWFgpfrhV2KvgP8nXi87CX8qvBtZNxQV0CxHlwRuGCN25INfvAg3qm1QdFD+8FrIa3fbThxvFgrFMXTBnDVGtdXqgcpYFVk3JpeDq6rMBKFbs+soHRkw2r8XA0IOhydRPULlGvkuM9W4i/bFShb4+7uBUiAj6xxB1JBmnmzP38aZA2ir+N7kajvk0wXVRkWZLIRNp9GSKeJ4lhQE6VijfN7ARTlfVt1b6aCci1vVKSmgolCN5Z1UKrnqyCjig5GJk4bTKmWP4JI1Rrn9QSIynCj2nxj5od6MAzsn2L5PSfMiRtZwLOHn1y1LLfsL1TftdX47bZ+BNhujZsbns4pSh0cslW395aDwgcqesCfSlYe2zlxvRtARN5rhM23ZgBj+a9Q2Xl7gPCJDd2+NmBIRcdFpdKoNo9mAeV6sF1hZF6J6kHqYOtCPZhzkGlyH6L70ybrTcl5uWSTKh8Cl2zonulo8qA1bkWvHqR1HrHGvTIr2Hx04P5WyxsFNnaO6TRs+9m4P+dG+tZBfc4at7IXIF1Wk90O2un+YBDVFwSZUtEfojD+fjbzDOA34F5r3MO9AGkNX/JaunYxqyLr6PnxgUeTxDsLHLbG7egK2DQePO4lpFmcbfn+0E9Dpy4vtI/S7+3g3wB9kAxYM5HGmHlut67Tw/ILMNUWTqvoeRJZLsJDCrn0vcJdAuuBaVF9rVGNP8sm1fVG+z8Xjq/ex93W+525MhdT98VqltzBv/EBZiidq+/oAAAAAElFTkSuQmCC"/></a>
+        <a href="https://www.facebook.com/colegiosanalbertomagnobarranquilla"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAATRJREFUSEvtlDEvBEEUx//vREQncRrxCegUcnNXaNxuK2FnPwGh1Kg0Cr2ORCsRs9uIapZCIbun4AOQKEnwFcyT3b1CxN2OPZtccVP/3//35v/eDKHiQxX7Y7gAbthaYGMOACwBqDPwQqDTSMZ7vZKwvkH7rDVLY+YZwMQPszCSiTc4IBBHxNj6xSiIZCIHBjhK3ANYTI0YuJnC3Eogg8+iJbGOyFHiDcBMakjM29rvHBeZZ1obUapxlPgAMJ0DaFP78YlNbV+Ae96QjNp8ZkS8C2Cya3oJpoe8Q3Or/c51qRk4qhECtNavUyLsaC85rBBAq9qLL0oB2krsE7DcLW4CGM9joUcGv2YbVTMbV+t3T6UA34tc1XxncP1fhzwC/OmhjWZQ+K1UHlFhBz0E1r/p0AK+AAThihlANB9FAAAAAElFTkSuQmCC"/></a>
     </div>
     <div class="imgBox">
-        <img src="{% static 'catalog/imagenes/PLANTA1-removebg-preview.png' %}">
+        <img src="{% static 'catalog/imagenes/hojita.-removebg-preview (2).png' %}" width="400px" height="400px" alt="">
     </div>
-    </div>
-</div>
-<div class="info">
-    <h2 class="heading">Huella de </h2>
-    <div>&nbsp</div>
-    <div>&nbsp</div>
-    <div>&nbsp</div>
-    <h2 class="heading">carbono</h2>
-    <div class="info-container">
-        <div class="info-box">
-            <h3>¿Qué es?</h3>
-            <p>
-                Disponibles desde productos como labiales en distintos tonos, 
-                sombras de gran pigmentación, brochas de alta calidad, bases 
-                para cualquier tono de piel y rímel con vitaminas que ayudan 
-                al crecimiento de las pestañ Lorem ipsum dolor, sit amet consectetur
-                adipisicing elit. Iure, voluptatibus quia? Magni sed modi iste, vitae 
-                dolorum quibusdam at perspiciatis repellat beatae recusandae esse in distinctio 
-                atque sit, tenetur exercitationem!
-            </p>
-        </div>
-        <div class="info-box">
-            <h3>Historia</h3>
-            <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet quo voluptas
-                 est quae voluptate ex? Deserunt voluptatum corporis ex ducimus sequi impedit
-                  esse nobis. Praesentium neque sit mollitia ducimus doloremque.
-                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta 
-                 repellat tempore voluptas necessitatibus delectus provident excepturi.
-                Ipsum minima maxime culpa in dolor, perspiciatis tempora quod, tempore, nam ab officia distinctio.
-            </p>
-        </div>
-        <div class="info-box">
-            <h3>¿Cuál es su importancia?</h3>
-            <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet quo voluptas
-                 est quae voluptate ex? Deserunt voluptatum corporis ex ducimus sequi impedit
-                  esse nobis. Praesentium neque sit mollitia ducimus doloremque.
-                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta 
-                 repellat tempore voluptas necessitatibus delectus provident excepturi.
-                Ipsum minima maxime culpa in dolor, perspiciatis tempora quod, tempore, nam ab officia distinctio.
-            </p>
-        </div>
-        <div class="info-box">
-            <h3>Implementación en la vida cotidiana</h3>
-            <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet quo voluptas
-                est quae voluptate ex? Deserunt voluptatum corporis ex ducimus sequi impedit
-                esse nobis. Praesentium neque sit mollitia ducimus doloremque.
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta 
-                repellat tempore voluptas necessitatibus delectus provident excepturi.
-                Ipsum minima maxime culpa in dolor, perspiciatis tempora quod, tempore, nam ab officia distinctio.
-            </p>
-        </div>
-    </div>
-</div>
+
 </section>
 {% endblock %}
