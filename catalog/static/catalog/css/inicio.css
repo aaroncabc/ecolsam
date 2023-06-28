@@ -96,6 +96,7 @@ header ul li a:hover{
    background-image: linear-gradient(var(--main-color), var(--main-color));
    background-repeat: no-repeat;
    -webkit-background-clip: text;
+   background-clip: text;
    background-position: 0 0;
    animation: iniciobgtext 5s linear infinite;
    animation-delay: 2s;

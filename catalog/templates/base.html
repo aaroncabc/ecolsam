@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nosotros</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.5/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'catalog/css/nosotros.css' %}">
+</head>
+<body>
+    <section class="cabeza">
+        <header class="nav">
+            <a href="#" class="logo"><img src="{% static 'catalog/imagenes/LOGO_ECO-removebg-preview.png' %}" width="80"
+                height="75"></a>
+
+            <nav class="navbar">
+            <ul>
+                <li><a href="{% url 'index' %}" class="active">Inicio</a></li>
+                <li><a href="indexb.html">Blog</a></li>
+                <li><a href="#">Test</a></li>
+                <li><a href="#">Huella COLSAM</a></li>
+                <li><a href="#">Juegos</a></li>
+            </nav>
+            </ul>
+        </header>
+    </section>
+    {% block content %}
+    {% endblock  %}
+    <section class="cabeza">
+      <header>
+        <figure>
+          <a href="{% url 'index' %}">
+              <img src="{% static 'catalog/imagenes/LOGO_ECO-removebg-preview.png' %}" weidth="150" height="150" alt="Logo de Make-Up">
+          </a>
+        </figure>
+        <ul>
+              <li><a href="{% url 'nosotros' %}">CONOCENOS</a></li>
+              <li><a href="indexb.html"><i class="fab fa-facebook" style="color: green;"></i></a></li>
+              <li><a href="#"><i class="fab fa-twitter" style="color: green;"></i></a></li>
+              <li><a href="#"><i class="fab fa-instagram" style="color: green;"></i></a></li>
+              <li><a href="#"><i class="fab fa-whatsapp" style="color: green;"></i></a></li>
+          </ul>
+      </header>
+  </section>
+     
+</body>
+</html>
