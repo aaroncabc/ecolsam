@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300;400;500;600;700;800;900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    font-family: 'Merienda', cursive;
+}
+section
+{ 
+    
+    position: relative;
+    width: 100%;
+    min-height: 100vp;
+    display: flex;
+    padding: 100px;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+header
+{  background-color: rgb(210, 223, 189);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}   
+header logo
+{
+    position: relative;
+    max-width: 50px;
+}
+header ul
+{
+    position: relative;
+    display: flex;
+
+}
+header ul li a
+{
+    display: inline-block;
+    color:  rgb(50, 128, 40);
+    font-weight: 700;
+    margin-left: 40px;
+    font-size: 19px;
+    transition: all 0.5s ease;
+}
+header ul li a:hover{
+    padding: 5px 10px;
+    background: rgb(53, 170, 122);
+    border-radius: 15px;
+    color: #dcf8da;
+
+}
+.nav{
+    transition: all 0.5s ease;
+}
+.content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color:  rgb(210, 223, 189);
+}
