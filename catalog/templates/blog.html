@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="info">
+    <div class="info-container">
+        <div class="info-box">
+            {% for post in Posts %}
+            <figure>
+                <a>
+                <img src="{{ post.thumbnail.url }}" weidth="150" height="150" alt="Logo de Make-Up">
+                </a>
+            </figure>
+            <h3>{{post.title}}</h3>
+            {% endfor %}  
+        </div>
+    </div>
+{% endblock %}
