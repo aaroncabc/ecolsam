@@ -1,17 +1,64 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<style>
+    .bar {
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Center the content horizontally */
+        padding: 10px;
+        background-color: #f2f2f2;
+      }
+    
+      .bar .image {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+    
+      .bar .text-container {
+        text-align: center; /* Center the content within the container */
+      }
+    
+      .bar .titles {
+        font-size: 40px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #000;
+      }
+
+      .bar .titles:hover {
+        color: #46aa39; /* Change the color when the title is focused */
+      }
+    
+      .bar .description {
+        font-size: 14px;
+        color: #888;
+      }
+
+      .bar .date {
+        margin-top: 20px;
+        margin-bottom: 0px;
+        font-size: 12px;
+        color: #888;
+      }
+</style>
 <div class="info">
+    {% for post in Posts %}
     <div class="info-container">
         <div class="info-box">
-            {% for post in Posts %}
-            <figure>
-                <a>
-                <img src="{{ post.thumbnail.url }}" weidth="150" height="150" alt="Logo de Make-Up">
-                </a>
-            </figure>
-            <h3>{{post.title}}</h3>
-            {% endfor %}  
+            <div class="bar">
+                <img class="image" src="{{post.thumbnail.url}}" alt="Profile Picture">
+                <div>
+                    <a class="titles" href="#" tabindex="0">{{post.title}}</a>
+                    <p class="description">{{post.description}}</p>
+                    <p class="date">{{post.formatted_created_at}}</p>
+                </div>
+            </div>
+              
         </div>
     </div>
+    {% endfor %}
+</div>
 {% endblock %}
