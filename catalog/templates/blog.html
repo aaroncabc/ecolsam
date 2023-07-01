@@ -51,7 +51,7 @@
             <div class="bar">
                 <img class="image" src="{{post.thumbnail.url}}" alt="Profile Picture">
                 <div>
-                    <a class="titles" href="#" tabindex="0">{{post.title}}</a>
+                    <a class="titles" href="{% url 'post' id=post.id %}" tabindex="0">{{post.title}}</a>
                     <p class="description">{{post.description}}</p>
                     <p class="date">{{post.formatted_created_at}}</p>
                 </div>

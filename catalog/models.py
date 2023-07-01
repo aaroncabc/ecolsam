@@ -27,3 +27,7 @@ class Post(models.Model):
     def formatted_created_at(self):
         formatted_date = self.created_at.strftime('%d de %B de %Y')
         return formatted_date.capitalize()
+
+class Image(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='images')
+    image = models.ImageField(upload_to='post_images/')

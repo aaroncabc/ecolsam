@@ -17,3 +17,7 @@ def blog(request):
         'Posts':posts,
     }
     return render(request, 'blog.html', context=context)
+
+def post(request,id):
+    post = Post.objects.get(id=id)
+    return render(request, 'post.html',{'post':post})

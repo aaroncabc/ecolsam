@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="info">
+    <div class="info-container">
+        <div class="info-box">
+            <h3 style="font-size: 40px; color: #46aa39;">{{post.title}}</h3>
+            <p>{{post.content}}</p>
+        </div>  
+    </div>
+</div>
+{% endblock %}
