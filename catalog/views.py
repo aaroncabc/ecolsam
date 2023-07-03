@@ -20,4 +20,5 @@ def blog(request):
 
 def post(request,id):
     post = Post.objects.get(id=id)
-    return render(request, 'post.html',{'post':post})
+    images = post.images.all()
+    return render(request, 'post.html',{'post':post,'images':images})
