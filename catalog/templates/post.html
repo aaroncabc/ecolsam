@@ -1,12 +1,84 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+</head>
+<style>
+    /* custom.css */
+    .owl-carousel {
+      max-width: 500px; /* Adjust the width of the carousel container */
+      margin: 20px auto; /* Add some space at the top and center the carousel container */
+    }
+
+    .owl-carousel .owl-nav button.owl-prev,
+    .owl-carousel .owl-nav button.owl-next {
+      font-size: 24px; /* Increase the font size of the navigation buttons */
+      color: #46aa39; /* Set the color of the navigation buttons */
+      background-color: transparent; /* Make the buttons transparent */
+      border: none; /* Remove button borders */
+    }
+    
+    .owl-carousel .owl-dots {
+      text-align: center; /* Center the dots */
+    }
+
+    .owl-carousel .owl-dot {
+      display: inline-block;
+      width: 10px; /* Adjust the size of the dots */
+      height: 10px; /* Adjust the size of the dots */
+      margin: 5px;
+      border-radius: 50%; /* Make the dots circular */
+      background-color: #46aa39; /* Set the color of the dots */
+    }
+    
+    .owl-carousel .item {
+      padding: 5px; /* Adjust the padding around the images */
+    }
+    
+    .owl-carousel .item img {
+      max-width: 100%; /* Make the images responsive */
+      max-height: 200px; /* Set the maximum height for the images */
+      display: block;
+      margin: 0 auto; /* Center the images within their containers */
+      border-radius: 10px; /* Add rounded corners to the images */
+    }
+
+    /* Add some space between the carousel and the paragraph */
+    .info-container {
+      margin-top: 20px;
+    }
+</style>    
 <div class="info">
     <div class="info-container">
         <div class="info-box">
             <h3 style="font-size: 40px; color: #46aa39;">{{post.title}}</h3>
             <p>{{post.content}}</p>
+            <!-- Add the carousel container -->
+            <div class="owl-carousel owl-theme">
+                {% for image in images %}
+                <div class="item">
+                    <img src="{{ image.image.url }}" alt="{{ post.title }} Image">
+                </div>
+                {% endfor %}
+            </div>
         </div>  
     </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<!-- Initialize the carousel using JavaScript -->
+<script>
+  $(document).ready(function() {
+    $('.owl-carousel').owlCarousel({
+      items: 1,
+      loop: true,
+      nav: true,
+      dots: true,
+      margin: 10,  // Adjust the margin between images
+      autoHeight: true, // Enable auto height
+      stagePadding: 40 // Add padding to show parts of the adjacent slides
+    });
+  });
+</script>
 {% endblock %}
