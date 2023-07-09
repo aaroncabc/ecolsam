@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.http import HttpResponse, JsonResponse
+from bs4 import BeautifulSoup
 from .models import Post
 
 # Create your views here.
@@ -22,3 +24,6 @@ def post(request,id):
     post = Post.objects.get(id=id)
     images = post.images.all()
     return render(request, 'post.html',{'post':post,'images':images})
+
+def test(request):
+    return render(request, 'test.html')

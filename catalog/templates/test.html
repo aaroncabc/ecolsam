@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% csrf_token %}
+<style>
+    .titles {
+        font-size: 48px !important;
+        font-weight: bold;
+        text-decoration: none;
+        color: #46aa39 !important;
+    }
+
+    .info-boxes-container {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .info-boxes-container info-box{
+        padding: 50px;
+    }
+
+</style>
+ <div class="info">
+    <div class="info-container">
+        <div class="info-box">
+            <h3 class="titles">TU HUELLA DE CARBONO</h3>
+            <div>&nbsp</div>
+            <div>&nbsp</div>
+            <div class="info-boxes-container">
+                <div class="info-box">
+                </div>
+                <div class="info-box">
+                </div>
+                <div class="info-box">
+                </div>
+            </div>          
+        </div>
+    </div>
+</div>
+{% endblock %}

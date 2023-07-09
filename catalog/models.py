@@ -31,3 +31,12 @@ class Post(models.Model):
 class Image(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='images')
     image = models.ImageField(upload_to='post_images/')
+    
+class User(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    password = models.CharField(max_length=100)
+    CarbonFootprint = models.FloatField(default=0)
+    TCarbonFootprint = models.CharField(max_length=100, default="-")
+    def __str__(self):
+        return self.name
