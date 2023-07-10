@@ -2,6 +2,9 @@
 {% load static %}
 {% block content %}
 {% csrf_token %}
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
 <style>
     .titles {
         font-size: 48px !important;
@@ -17,6 +20,13 @@
     
     .info-boxes-container info-box{
         padding: 50px;
+        height: 420px;
+    }
+
+    .info-boxes-container .info-box h3:last-of-type{
+        position: absolute;
+        bottom: 30px; /* Adjust the value as needed */
+        margin: 0;
     }
 
 </style>
@@ -28,13 +38,75 @@
             <div>&nbsp</div>
             <div class="info-boxes-container">
                 <div class="info-box">
+                    <h3>Transporte</h3>
+                    <div>&nbsp</div>
+
+                    <p>¿Qué medio de transporte utilizas?</p>
+                    <pa>selecciona el mas frecuente</pa>
+                    <select class="form-control">
+                        <option value="auto">Auto</option>
+                        <option value="bus">Bus</option>
+                        <option value="moto">Moto</option>
+                    </select>
+                    <div>&nbsp</div>
+                    <pa>¿Cuantos km recorres al mes?</pa>
+                    <input type="number" class="form-control" placeholder="Km">
+                    <div>&nbsp</div>
+                    <div>&nbsp</div>
+                    
+                    <h3>Emisión: </h3>
                 </div>
                 <div class="info-box">
+                    <h3>Electricidad</h3>
+                    <div>&nbsp</div>
+
+                    <p>¿Cual es tu consumo electrico?</p>
+                    <pa>consultalo en tu recibo</pa>
+                    <input type="text" class="form-control" placeholder="kWh">
+                    
+                    
+                    <h3>Emisión: </h3>
                 </div>
                 <div class="info-box">
+                    <h3>Agua</h3>
+                    <div>&nbsp</div>
+
+                    <p>¿Cual es tu consumo de agua?</p>
+                    <pa>consultalo en tu recibo</pa>
+                    <input type="text" class="form-control" placeholder="m³">
+                    
+
+                    <h3>Emisión: </h3>
                 </div>
-            </div>          
+                <div class="info-box">
+                    <h3>Compras/envios</h3>
+                    <div>&nbsp</div>
+
+                    <p>¿Cuantos pedidos online o envios relizas?</p>
+                    <pa>promedio mensual</pa>
+                    <select class="form-control">
+                        <option value="auto">1-3</option>
+                        <option value="bus">3-4</option>
+                        <option value="moto">5+</option>
+                    </select>
+
+                    <div>&nbsp</div>
+                    <pa>¿Que tipo de pedido/envios?</pa>
+                    <div>&nbsp</div>
+                    <select class="form-control">
+                        <option value="auto">Nacionales</option>
+                        <option value="bus">Internacionales</option>
+                        <option value="moto">Ambos</option>
+                    </select>
+
+                    
+                    <h3>Emisión: </h3>
+                </div>
+            </div>  
+            <div>&nbsp</div>  
+            <h3>Emisión total: </h3>      
         </div>
     </div>
 </div>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 {% endblock %}
