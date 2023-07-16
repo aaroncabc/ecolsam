@@ -6,10 +6,6 @@ from .models import Post
 def index(request):    
     return render(request, 'index.html')
 
-def juegos(request):
-    return render(request,'asdbaysbd.html')
-
-
 def nosotros(request):
     return render(request, 'nosotros.html')
 
