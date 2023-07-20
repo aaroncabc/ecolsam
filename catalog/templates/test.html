@@ -2,9 +2,6 @@
 {% load static %}
 {% block content %}
 {% csrf_token %}
-<head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
 <style>
     .titles {
         font-size: 48px !important;
@@ -13,9 +10,18 @@
         color: #46aa39 !important;
     }
 
+    .category{
+        font-size: 32px !important;
+        font-weight: bold;
+        text-decoration: none;
+        color: #00000 !important;
+        padding-bottom: 20px;
+    }
+
     .info-boxes-container {
         display: flex;
         justify-content: space-between;
+        padding: 20px;
     }
     
     .info-boxes-container info-box{
@@ -23,11 +29,44 @@
         height: 420px;
     }
 
-    .info-boxes-container .info-box h3:last-of-type{
-        position: absolute;
-        bottom: 30px; /* Adjust the value as needed */
-        margin: 0;
+    .info-boxes-container .info-box p{
+        padding: 5px;
     }
+
+    .form-control {
+        display: block;
+        width: 100%;
+        padding: 0.375rem 0.75rem;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      }
+      
+      .form-control:focus {
+        color: #495057;
+        background-color: #fff;
+        border-color: #80bdff;
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      }
+      
+      .form-control::-ms-expand {
+        background-color: transparent;
+        border: 0;
+      }
+      
+      .form-control[disabled],
+      .form-control:disabled {
+        background-color: #e9ecef;
+        opacity: 1;
+      }
+      
 
 </style>
  <div class="info">
@@ -38,76 +77,155 @@
             <div>&nbsp</div>
             <div class="info-boxes-container">
                 <div class="info-box">
-                    <h3>Transporte</h3>
-                    <div>&nbsp</div>
-
-                    <p>¿Qué medio de transporte utilizas?</p>
-                    <pa>selecciona el mas frecuente</pa>
-                    <select class="form-control">
-                        <option value="auto">Auto</option>
-                        <option value="bus">Bus</option>
-                        <option value="moto">Moto</option>
-                    </select>
-                    <div>&nbsp</div>
-                    <pa>¿Cuantos km recorres al mes?</pa>
-                    <input type="number" class="form-control" placeholder="Km">
-                    <div>&nbsp</div>
-                    <div>&nbsp</div>
-                    
-                    <h3>Emisión: </h3>
+                    <h4 class="category">Agua</h4>
+                    <p>¿Cuanto tiempo tardo en bañarme?
+                        <div>&nbsp</div>
+                        <select id="agua" class="form-control">
+                            <option value="149" >Solo 5 minutos</option>
+                            <option value="223">entre 5 y 10 minutos</option>
+                            <option value="450">entre 10 y 20 minutos</option>
+                            <option value="910">mas de 20 minutos</option>
+                        </select>
+                    </p>
                 </div>
                 <div class="info-box">
-                    <h3>Electricidad</h3>
-                    <div>&nbsp</div>
-
-                    <p>¿Cual es tu consumo electrico?</p>
-                    <pa>consultalo en tu recibo</pa>
-                    <input type="text" class="form-control" placeholder="kWh">
-                    
-                    
-                    <h3>Emisión: </h3>
+                    <h4 class="category">Energia</h4>
+                    <p>En un dia normal, utilizo el televisor o el ordenador:
+                        <div>&nbsp</div>
+                    <select id="Energia" class="form-control">
+                        <option value="0" >Nada</option>
+                        <option value="50">Menos de 1 hora</option>
+                        <option value="80">Mas de una hora</option>
+                    </select>
+                    </p>
+                    <p>Apagamos las luces, los ordenadores, y la television cuando no se utilizan <input Id="Ener" type="checkbox"></p>
+                </div>
+            </div>
+            <div class="info-boxes-container">
+                <div class="info-box">
+                    <h4 class="category">Alimentos</h4>
+                    <p>En un dia normal desecho:
+                        <div>&nbsp</div>
+                        <select id="Alimen1" class="form-control">
+                            <option value = "0">Nada de mi comida</option>
+                            <option value = "100">Una cuarta parte de mi comida</option>
+                            <option value = "150">Un tercio de mi comida</option>
+                            <option value = "200">La mitad de mi comuda</option>
+                        </select>
+                    </p>
+                    <p>de los alimentos que consumo, ¿que cantidad es organica? (frutas,vegetales,carnes,jugos aceites)
+                        <div>&nbsp</div>
+                        <select id="Alimen2" class="form-control">
+                            <option value = "0">Todos</option>
+                            <option value = "30">Algunos</option>
+                            <option value = "60">Ninguno</option>
+                        </select>
+                    </p>
                 </div>
                 <div class="info-box">
-                    <h3>Agua</h3>
-                    <div>&nbsp</div>
-
-                    <p>¿Cual es tu consumo de agua?</p>
-                    <pa>consultalo en tu recibo</pa>
-                    <input type="text" class="form-control" placeholder="m³">
-                    
-
-                    <h3>Emisión: </h3>
+                    <h4 class="category">Forestal</h4>
+                    <p>¿Cuantas libretas de 100 hojas usas en un semestre?
+                        <div>&nbsp</div>
+                        <select id="Fores" class="form-control">
+                            <option value = "58">2 a 3</option>
+                            <option value = "81">3 a 4</option>
+                            <option value = "105">4 a 5</option>
+                            <option value = "128">5 a 6</option>
+                            <option value = "151">6 a 7</option>
+                        </select>
+                    </p>
+                </div>
+            </div>
+            <div class="info-boxes-container">
+                <div class="info-box">
+                    <h4 class="category">Compras/envios</h4>
+                    <p>No me pongo nunca un __% de las prendas que hay en mi armario
+                        <div>&nbsp</div>
+                        <select id="CmEn1" class="form-control">
+                            <option value = "25">menos del 25%</option>
+                            <option value = "50">El 50%</option>
+                            <option value = "75">El 75%</option>
+                            <option value = "100">Mas del 75%</option>
+                        </select>
+                    </p>
+                    <p>Tengo __ pares de zapatos
+                        <div>&nbsp</div>
+                        <select id="CmEn2" class="form-control">
+                            <option value = "20">2 a 3</option>
+                            <option value = "60">4 a 6</option>
+                            <option value = "90">7 o mas</option>
+                        </select>
+                    </p>
                 </div>
                 <div class="info-box">
-                    <h3>Compras/envios</h3>
-                    <div>&nbsp</div>
-
-                    <p>¿Cuantos pedidos online o envios relizas?</p>
-                    <pa>promedio mensual</pa>
-                    <select class="form-control">
-                        <option value="">0</option>
-                        <option value="">1-3</option>
-                        <option value="">3-4</option>
-                        <option value="">5+</option>
-                    </select>
-
-                    <div>&nbsp</div>
-                    <pa>¿Que tipo de pedido/envios?</pa>
-                    <div>&nbsp</div>
-                    <select class="form-control">
-                        <option value="auto">Nacionales</option>
-                        <option value="bus">Internacionales</option>
-                        <option value="moto">Ambos</option>
-                    </select>
-
-                    
-                    <h3>Emisión: </h3>
+                    <h4 class="category">Productos</h4>
+                    <p>La basura que he generado hoy podria caber en:
+                        <div>&nbsp</div>
+                        <select id="Prds" class="form-control">
+                            <option value = "20">Una caja de zapatos</option>
+                            <option value = "60">Un cubo grande</option>
+                            <option value = "200">Cubo de basura</option>
+                            <option value = "-50">¡No he generado basura hoy!</option>
+                        </select>
+                    </p>
+                    <p>Reutilizo las cosas antes de tirarlas: <input id="Prd1" type="checkbox"></p>
+                    <p>reciclo todo mi papel, latas, cristales, plasticos: <input id="Prd2" type="checkbox"></p>
+                    <p>Evito los productos desechables siempre que puedo: <input id ="Prd3"type="checkbox"></p>
                 </div>
-            </div>  
-            <div>&nbsp</div>  
-            <h3>Emisión total: </h3>      
+            </div>
+            <button class="form-control" onclick="calculateScore()">Calcular mi huella</button>
+            <div>&nbsp</div>
+            <h3 id="Ptotal">Puntaje total: </h3>      
         </div>
     </div>
 </div>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    // Function to calculate the total score and update the button
+    function calculateScore() {
+      // Get the values from the select elements
+      const agua = parseInt(document.getElementById('agua').value);
+      const energia = parseInt(document.getElementById('Energia').value);
+      const alimen1 = parseInt(document.getElementById('Alimen1').value);
+      const alimen2 = parseInt(document.getElementById('Alimen2').value);
+      const fores = parseInt(document.getElementById('Fores').value);
+      const cmEn1 = parseInt(document.getElementById('CmEn1').value);
+      const cmEn2 = parseInt(document.getElementById('CmEn2').value);
+      const prds = parseInt(document.getElementById('Prds').value);
+
+      // Get the status of the checkboxes
+      const enerCheckbox = document.getElementById('Ener').checked;
+      const prd1Checkbox = document.getElementById('Prd1').checked;
+      const prd2Checkbox = document.getElementById('Prd2').checked;
+      const prd3Checkbox = document.getElementById('Prd3').checked;
+
+      // Calculate the total score
+      let totalScore = agua + energia + alimen1 + alimen2 + fores + cmEn1 + cmEn2 + prds;
+
+      if (!enerCheckbox) {
+        totalScore += 50;
+      }
+
+      if (prd1Checkbox) {
+        totalScore += -20;
+      }else{
+        totalScore += 40;
+      }
+
+      if (prd2Checkbox) {
+        totalScore += -20;
+      }else{
+        totalScore += 40;
+      }
+
+      if (prd3Checkbox) {
+        totalScore += -10;
+      }else{
+        totalScore += 60;
+      }
+
+      const text = document.getElementById('Ptotal');
+      text.textContent = 'Puntaje total: ' + totalScore;
+    }
+  
+</script>
 {% endblock %}
