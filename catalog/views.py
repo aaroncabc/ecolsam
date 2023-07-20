@@ -12,6 +12,9 @@ def nosotros(request):
 def info(request):
     return render(request, 'info.html')
 
+def games(request):
+    return render(request,'games.html')
+
 def blog(request):
     posts = Post.objects.all()
     context = {
