@@ -9,5 +9,7 @@ urlpatterns = [
     path('blog', views.blog, name='blog'),
     path('post/<int:id>', views.post, name='post'),
     path('test', views.test, name='test'),
-    path('games',views.games,name='games')
+    path('games',views.games,name='games'),
+    path('sendFoot/<int:total_score>',views.send,name="send"),
+    path('saved/<int:score>/<str:name>/<str:type>',views.saved,name="saved"),
 ]

@@ -34,11 +34,13 @@ class Image(models.Model):
     
 class TypeUser(models.Model):
     name = models.CharField(max_length=100)    
+    def __str__(self):
+        return self.name
 
 class User(models.Model):
     name = models.CharField(max_length=100)
-    Type = models.models.ForeignKey(TypeUser, on_delete=models.CASCADE)
-    age = models.IntegerField()
+    Type =  models.ForeignKey(TypeUser, on_delete=models.CASCADE, null=True) 
+    age = models.IntegerField(default=0)
     CarbonFootprint = models.FloatField(default=0)
     def __str__(self):
         return self.name

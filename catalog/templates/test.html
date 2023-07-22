@@ -69,7 +69,7 @@
       
 
 </style>
- <div class="info">
+<div class="info">
     <div class="info-container">
         <div class="info-box">
             <h3 class="titles">TU HUELLA DE CARBONO</h3>
@@ -175,11 +175,18 @@
             </div>
             <button class="form-control" onclick="calculateScore()">Calcular mi huella</button>
             <div>&nbsp</div>
+            <div>&nbsp</div>
+            <button id='save' class="form-control" >Haz parte de la huella COLSAM</button>
+            <div>&nbsp</div>
             <h3 id="Ptotal">Puntaje total: </h3>      
         </div>
     </div>
 </div>
 <script>
+    const Button = document.getElementById('save');
+    Button.disabled= true;
+    let totalScore=0
+    let href = "{% url 'send' total_score=0 %}";
     // Function to calculate the total score and update the button
     function calculateScore() {
       // Get the values from the select elements
@@ -199,7 +206,7 @@
       const prd3Checkbox = document.getElementById('Prd3').checked;
 
       // Calculate the total score
-      let totalScore = agua + energia + alimen1 + alimen2 + fores + cmEn1 + cmEn2 + prds;
+      totalScore = agua + energia + alimen1 + alimen2 + fores + cmEn1 + cmEn2 + prds;
 
       if (!enerCheckbox) {
         totalScore += 50;
@@ -225,7 +232,15 @@
 
       const text = document.getElementById('Ptotal');
       text.textContent = 'Puntaje total: ' + totalScore;
+      Button.disabled = false;
+      href = href.replace('0', totalScore)
+      console.log(href)
     }
-  
+
+    function submitScore() {
+        const submitButton = document.getElementById('save');
+        window.location.href = href;
+    }
+    document.getElementById('save').addEventListener('click', submitScore);
 </script>
 {% endblock %}
