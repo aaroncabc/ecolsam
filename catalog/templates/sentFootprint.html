@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    .titles {
+        font-size: 48px !important;
+        font-weight: bold;
+        text-decoration: none;
+        color: #46aa39 !important;
+    }
+    .form-control {
+        display: block;
+        width: 100%;
+        padding: 0.375rem 0.75rem;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      }
+      
+      .form-control:focus {
+        color: #495057;
+        background-color: #fff;
+        border-color: #80bdff;
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      }
+      
+      .form-control::-ms-expand {
+        background-color: transparent;
+        border: 0;
+      }
+      
+      .form-control[disabled],
+      .form-control:disabled {
+        background-color: #e9ecef;
+        opacity: 1;
+      }
+</style>
+<div class ="info">
+    <div class= "info-container">
+        <div class="info-box">
+            <h3 class="titles">Registrar mi huella</h3>
+            <div>&nbsp</div>
+            <div>&nbsp</div>
+            <input type="text" class="form-control" id='name' placeholder="Nombre completo">
+            <div>&nbsp</div>
+            <select class="form-control" id="Type">
+                {% for type in types %}
+                <option value='{{type.name}}'>{{type.name}}</option>
+                {% endfor %}
+            </select>
+            <div>&nbsp</div>
+            <p style="color:red;">{{mesagge}}</p>
+            <div>&nbsp</div>
+            <button class="form-control" id='save' onclick="redirectTo()">Registrar</button>
+        </div>
+    </div>   
+</div>
+<script>
+    function redirectTo(){
+        href = "{% url 'saved' name='NOMBRE' type='TYPE' score=0 %}"
+        t = document.getElementById('Type').value
+        n = document.getElementById('name').value
+        sc= {{total_score}}
+        window.location.href = href.replace('TYPE',t).replace('NOMBRE',n).replace('0',sc);
+    }
+</script>
+
+{% endblock  %}

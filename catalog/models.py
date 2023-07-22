@@ -32,11 +32,15 @@ class Image(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='images')
     image = models.ImageField(upload_to='post_images/')
     
+class TypeUser(models.Model):
+    name = models.CharField(max_length=100)    
+    def __str__(self):
+        return self.name
+
 class User(models.Model):
     name = models.CharField(max_length=100)
-    email = models.EmailField()
-    password = models.CharField(max_length=100)
+    Type =  models.ForeignKey(TypeUser, on_delete=models.CASCADE, null=True) 
+    age = models.IntegerField(default=0)
     CarbonFootprint = models.FloatField(default=0)
-    TCarbonFootprint = models.CharField(max_length=100, default="-")
     def __str__(self):
         return self.name
