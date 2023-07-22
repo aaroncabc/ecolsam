@@ -14,18 +14,15 @@
 </head>
 <body>
     <section class="cabeza">
-        <header class="nav">
+        <header>
             <a href="#" class="logo"><img src="{% static 'catalog\imagenes\LOGO_ECO-removebg-preview.png' %}" width="80"
                 height="75"></a>
-
-            <nav>
             <ul>
                 <li><a href="{% url 'index' %}" class="active">Inicio</a></li>
                 <li><a href="{% url 'blog' %}">Blog</a></li>
                 <li><a href="{% url 'test' %}">Test</a></li>
                 <li><a href="{% url 'statistics' %}">Huella COLSAM</a></li>
                 <li><a href="#">Juegos</a></li>
-            </nav>
             </ul>
         </header>
     </section>

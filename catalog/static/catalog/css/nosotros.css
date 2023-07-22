@@ -55,6 +55,9 @@ header ul
     display: flex;
 
 }
+a:hover{
+    text-decoration: none !important;
+}
 header ul li a
 {
     display: inline-block;
@@ -63,14 +66,12 @@ header ul li a
     margin-left: 40px;
     font-size: 20px;
     transition: all 0.5s ease;
-    text-decoration: none !important;
 }
 header ul li a:hover{
     padding: 5px 10px;
     background: rgb(70, 170, 57);
     border-radius: 15px;
     color: #dcf8da;
-
 }
 .info h2{
     margin-bottom: 300rem;
