@@ -41,6 +41,6 @@ class User(models.Model):
     name = models.CharField(max_length=100)
     Type =  models.ForeignKey(TypeUser, on_delete=models.CASCADE, null=True) 
     age = models.IntegerField(default=0)
-    CarbonFootprint = models.FloatField(default=0)
+    CarbonFootprint = models.IntegerField(default=0)
     def __str__(self):
         return self.name

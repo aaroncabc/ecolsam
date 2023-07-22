@@ -2,6 +2,8 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse, JsonResponse
 from .models import Post,TypeUser, User
 import json
+from django.db.models import Sum,Value
+from django.db.models.functions import Coalesce
 from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
@@ -44,3 +46,20 @@ def saved(request,score,name,type):
         user = User(name=name,age=0,CarbonFootprint=score,Type=TypeUser.objects.get(name=type))
         user.save()
         return render(request, 'SuccesfullSave.html')
+    
+def statistics(request):
+    total = User.objects.all().aggregate(Sum('CarbonFootprint'))
+    Estudiantes = User.objects.filter(Type=TypeUser.objects.get(name="Estudiante")).aggregate(Sum('CarbonFootprint'))
+    Profesores = User.objects.filter(Type=TypeUser.objects.get(name="Profesor")).aggregate(Sum('CarbonFootprint'))
+    Administrativos = User.objects.filter(Type=TypeUser.objects.get(name="Administrativo")).aggregate(Sum('CarbonFootprint'))
+    Padres = User.objects.filter(Type=TypeUser.objects.get(name="Padre de familia")).aggregate(Sum('CarbonFootprint'))
+
+    # Manually check and set context variables to 0 if they are None
+    context = {
+        'Estudiantes': Estudiantes['CarbonFootprint__sum'] if Estudiantes['CarbonFootprint__sum'] is not None else 0,
+        'Profesores': Profesores['CarbonFootprint__sum'] if Profesores['CarbonFootprint__sum'] is not None else 0,
+        'Administrativos': Administrativos['CarbonFootprint__sum'] if Administrativos['CarbonFootprint__sum'] is not None else 0,
+        'Padres': Padres['CarbonFootprint__sum'] if Padres['CarbonFootprint__sum'] is not None else 0,
+        'total': total['CarbonFootprint__sum'] if total['CarbonFootprint__sum'] is not None else 0,
+    }
+    return render(request, 'HuellaColsam.html', context=context)

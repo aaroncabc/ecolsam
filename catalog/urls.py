@@ -12,4 +12,5 @@ urlpatterns = [
     path('games',views.games,name='games'),
     path('sendFoot/<int:total_score>',views.send,name="send"),
     path('saved/<int:score>/<str:name>/<str:type>',views.saved,name="saved"),
+    path('statistics',views.statistics,name="statistics"),
 ]

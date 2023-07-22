@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+{% block content %}
+<head>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<style>
+    /* Custom CSS for the pie chart */
+    #scorePieChart {
+        max-width: 100%; /* Set a maximum width for the chart */
+      margin: 0 auto; /* Center the chart horizontally */
+    }
+        /* Custom styles for the cards */
+        .card {
+          margin-bottom: 20px;
+          border-radius: 4px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          border: 1px solid rgba(0, 0, 0, 0.125);
+        }
+    
+        .card-title {
+          margin-bottom: 0.75rem;
+        }
+    
+        .card-text {
+          margin-bottom: 0;
+        }
+    
+        /* Custom styles for rows and columns */
+        .row {
+          display: flex;
+          flex-wrap: wrap;
+          margin-right: -15px;
+          margin-left: -15px;
+        }
+    
+        .col-12 {
+          flex-basis: 100%;
+          max-width: 100%;
+        }
+    
+        .col-lg-3,
+        .col-md-6 {
+          position: relative;
+          width: 100%;
+          min-height: 1px;
+          padding-right: 15px;
+          padding-left: 15px;
+        }
+    
+        @media (min-width: 992px) {
+          .col-lg-3 {
+            flex: 0 0 25%;
+            max-width: 25%;
+          }
+    
+          .col-md-6 {
+            flex: 0 0 50%;
+            max-width: 50%;
+          }
+        }
+    
+        /* Custom styles for the pie chart */
+        #scorePieChart {
+          max-width: 100%;
+          margin: 0 auto;
+        }    
+  
+    /* Media query to adjust chart size on smaller screens */
+    @media (max-width: 576px) {
+      #scorePieChart {
+        max-width: 200px; /* Reduce the width for smaller screens */
+      }
+    }
+  </style>
+  <div class="container mt-4">
+    <!-- Row for Total Score -->
+    <div class="row">
+      <div class="col-12">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">Total Score</h5>
+            <h3 class="card-text">{{total}}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Row for Student, Professor, Parent, and Administrative Scores -->
+    <div class="row mt-4">
+      <div class="col-lg-3 col-md-6">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">Student Score</h5>
+            <h3 class="card-text">{{ Estudiantes }}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">Professor Score</h5>
+            <h3 class="card-text">{{ Profesores }}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">Parent Score</h5>
+            <h3 class="card-text">{{ Padres }}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">Administrative Score</h5>
+            <h3 class="card-text">{{ Administrativos}}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    <!-- Pie Chart -->
+    <div class="row mt-4">
+        <div class="col-12">
+          <canvas id="scorePieChart" width="300" height="300"></canvas>
+        </div>
+      </div>
+    </div>
+
+  <script>
+  // Get the score data from Django template context
+  var scoreData = {
+    'Students': {{ Estudiantes }},
+    'Professors': {{ Profesores }},
+    'Parents': {{ Padres }},
+    'Administratives': {{ Administrativos }},
+  };
+
+  // Function to update the pie chart with the new data
+  function updatePieChart(data) {
+    var ctx = document.getElementById('scorePieChart').getContext('2d');
+    var scorePieChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: Object.keys(data),
+        datasets: [{
+          data: Object.values(data),
+          backgroundColor: ['#007bff', '#28a745', '#ffc107', '#dc3545'],
+        }]
+      },
+      options: {
+        responsive: true,
+        legend: {
+          display: true,
+          position: 'bottom',
+        },
+      }
+    });
+  }
+
+  // Call the function to update the pie chart with the data from Django template
+  updatePieChart(scoreData);
+  </script>
+{% endblock  %}
