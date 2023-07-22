@@ -13,6 +13,7 @@
     --second-bg-color: #cff0cc;
     --letter-color:#383737;
 }
+
 html{
      font-size: 62.5%;
 }
@@ -62,6 +63,7 @@ header ul li a
     margin-left: 40px;
     font-size: 20px;
     transition: all 0.5s ease;
+    text-decoration: none !important;
 }
 header ul li a:hover{
     padding: 5px 10px;
