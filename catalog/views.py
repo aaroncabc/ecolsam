@@ -43,4 +43,4 @@ def saved(request,score,name,type):
     else:
         user = User(name=name,age=0,CarbonFootprint=score,Type=TypeUser.objects.get(name=type))
         user.save()
-        return render(request, 'Succesfullsave.html')
+        return render(request, 'SuccesfullSave.html')
