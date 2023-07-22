@@ -80,7 +80,7 @@
       <div class="col-12">
         <div class="card text-center">
           <div class="card-body">
-            <h5 class="card-title">Total Score</h5>
+            <h5 class="card-title">Huella Colsam</h5>
             <h3 class="card-text">{{total}}</h3>
           </div>
         </div>
@@ -91,7 +91,7 @@
       <div class="col-lg-3 col-md-6">
         <div class="card text-center">
           <div class="card-body">
-            <h5 class="card-title">Student Score</h5>
+            <h5 class="card-title">Estudiantes</h5>
             <h3 class="card-text">{{ Estudiantes }}</h3>
           </div>
         </div>
@@ -99,7 +99,7 @@
       <div class="col-lg-3 col-md-6">
         <div class="card text-center">
           <div class="card-body">
-            <h5 class="card-title">Professor Score</h5>
+            <h5 class="card-title">Profesores</h5>
             <h3 class="card-text">{{ Profesores }}</h3>
           </div>
         </div>
@@ -107,7 +107,7 @@
       <div class="col-lg-3 col-md-6">
         <div class="card text-center">
           <div class="card-body">
-            <h5 class="card-title">Parent Score</h5>
+            <h5 class="card-title">Padres de familia</h5>
             <h3 class="card-text">{{ Padres }}</h3>
           </div>
         </div>
@@ -115,7 +115,7 @@
       <div class="col-lg-3 col-md-6">
         <div class="card text-center">
           <div class="card-body">
-            <h5 class="card-title">Administrative Score</h5>
+            <h5 class="card-title">Administrativos</h5>
             <h3 class="card-text">{{ Administrativos}}</h3>
           </div>
         </div>
@@ -134,10 +134,10 @@
   <script>
   // Get the score data from Django template context
   var scoreData = {
-    'Students': {{ Estudiantes }},
-    'Professors': {{ Profesores }},
-    'Parents': {{ Padres }},
-    'Administratives': {{ Administrativos }},
+    'Estudiantes': {{ Estudiantes }},
+    'Profesores': {{ Profesores }},
+    'Padres de familia': {{ Padres }},
+    'Administrativos': {{ Administrativos }},
   };
 
   // Function to update the pie chart with the new data
