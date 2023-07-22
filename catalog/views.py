@@ -39,7 +39,7 @@ def test(request):
 def saved(request,score,name,type):
     types = TypeUser.objects.all()
     if(User.objects.filter(name=name).exists()):
-        return render(request, 'sentFootprint.html',{'mesagge':'Ya se registro una huella con ese nombre','types':types})
+        return render(request, 'sentFootprint.html',{'mesagge':'Ya se registro una huella con ese nombre','types':types,'total_score':score})
     else:
         user = User(name=name,age=0,CarbonFootprint=score,Type=TypeUser.objects.get(name=type))
         user.save()
