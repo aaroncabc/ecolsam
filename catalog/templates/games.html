@@ -16,6 +16,27 @@
         border-radius: 15px; /* Adjust the value as per your preference */
         overflow: hidden; /* This ensures that iframes fit into the rounded shape */
     }
+  .info-box {
+      border: 2px solid #ccc;
+      padding: 20px;
+      text-align: center !important;
+  }
+  .info-box h2 {
+      max-width: 100%;
+  }
+
+  @media (max-width: 600px) { /* Adjust this value as needed */
+    .info-box {
+      padding: 10px; /* Reduce padding for smaller screens */
+      max-width: 100%; /* Reduce max-width for smaller screens */
+  }
+  .info-box h2 {
+      font-size: 2.5rem; /* Reduce font-size for smaller screens */
+      padding-left: 15%; /* Remove padding for smaller screens */
+      padding-right: 15%; /* Remove padding for smaller screens */
+      margin: 10px 0; /* Add margin to center h2 elements within .info-box */
+  }
+}
     
 </style>
 <div>&nbsp</div>
@@ -26,11 +47,9 @@
 <div class="info">
     <div class="info container">
         <div class="info-box">
-            <h2>Juega </h2>
+            <h2>Juega</h2>
             <div>&nbsp</div>
-            <div>&nbsp</div>
-            <div>&nbsp</div>
-            <h2>y aprende</h2>
+            <h2> y aprende</h2>
         </div>
     </div>
 </div>
