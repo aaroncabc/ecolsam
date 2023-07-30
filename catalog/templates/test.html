@@ -23,7 +23,7 @@
         justify-content: space-between;
         padding: 20px;
     }
-    
+
     .info-boxes-container info-box{
         padding: 50px;
         height: 420px;
@@ -47,7 +47,7 @@
         border-radius: 0.25rem;
         transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
       }
-      
+
       .form-control:focus {
         color: #495057;
         background-color: #fff;
@@ -55,12 +55,12 @@
         outline: 0;
         box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
       }
-      
+
       .form-control::-ms-expand {
         background-color: transparent;
         border: 0;
       }
-      
+
       .form-control[disabled],
       .form-control:disabled {
         background-color: #e9ecef;
@@ -86,6 +86,9 @@
                             <option value="910">mas de 20 minutos</option>
                         </select>
                     </p>
+                    <p>Cuando me cepillo los dientes, ¿dejo correr el agua?
+                        <input id="agua2" type="checkbox">
+                    </p>
                 </div>
                 <div class="info-box">
                     <h4 class="category">Forestal</h4>
@@ -99,7 +102,7 @@
                             <option value = "151">6 a 7</option>
                         </select>
                     </p>
-                </div>  
+                </div>
             </div>
             <div class="info-boxes-container">
                 <div class="info-box">
@@ -144,7 +147,7 @@
                     <p>¿Compras o usas ropa de segunda mano, es decir que ya ha sido utilizada por una o más personas?<input Id="CmEn3" type="checkbox"></p>
                     <p>Compro ropa de solo uso es decir ropa para una sola ocasión ya sea fiesta, salida, etc.<input Id="CmEn4" type="checkbox"></p>
                 </div>
-                
+
             </div>
             <div class="info-boxes-container">
                 <div class="info-box">
@@ -206,13 +209,30 @@
                     <p>¿Sabes que es la huella de carbono y su uso?<input type="checkbox"></p>
                     <p>¿Conocés las consecuencias de NO aplicar la huella de carbono?<input type="checkbox"></p>
                 </div>
+                <div class="info-box">
+                    <h4 class="category">Transporte</h4>
+                    <p>¿Que tipo de transporte utilizas mas seguido
+                        <div>&nbsp</div>
+                        <select id="trns" class="form-control">
+                            <option value = "100">Bus</option>
+                            <option value = "200">Auto</option>
+                            <option value = "120">Moto</option>
+                            <option value = "0" >Bicicleta</option>
+                        </select>
+                    </p>
+                    <p>¿Cuantos kilometros recorres al mes? aproximadamente
+                        <div>&nbsp</div>
+                        <input class="form-control" type="text" placeholder="Km" id="trans2">
+                    </p>
+                </div>
+
             </div>
             <button class="form-control" onclick="calculateScore()">Calcular mi huella</button>
             <div>&nbsp</div>
             <div>&nbsp</div>
             <button id='save' class="form-control" >Haz parte de la huella COLSAM</button>
             <div>&nbsp</div>
-            <h3 id="Ptotal">Puntaje total: </h3>      
+            <h3 id="Ptotal">Puntaje total: </h3>
         </div>
     </div>
 </div>
@@ -225,6 +245,8 @@
     function calculateScore() {
       // Get the values from the select elements
       const agua = parseInt(document.getElementById('agua').value);
+      const trns = parseInt(document.getElementById('trns').value);
+      const trans2 = parseInt(document.getElementById('trans2').value);
       const energia = parseInt(document.getElementById('Energia').value);
       const energia2 = parseInt(document.getElementById('Energia2').value);
       const alimen1 = parseInt(document.getElementById('Alimen1').value);
@@ -236,6 +258,7 @@
       const prds2 = parseInt(document.getElementById('Prds2').value);
 
       // Get the status of the checkboxes
+      const agua2Checkbox = document.getElementById('agua2').checked;
       const enerCheckbox = document.getElementById('Ener').checked;
       const ener2Checkbox = document.getElementById('Ener2').checked;
       const ener3Checkbox = document.getElementById('Ener3').checked;
@@ -251,7 +274,11 @@
       const cmEn4Checkbox = document.getElementById('CmEn4').checked;
 
       // Calculate the total score
-      totalScore = agua + energia + energia2 + alimen1 + alimen2 + fores + cmEn1 + cmEn2 + prds + prds2;
+      totalScore = trns+ trans2*trns*0.2 + agua + energia + energia2 + alimen1 + alimen2 + fores + cmEn1 + cmEn2 + prds + prds2;
+
+      if (agua2Checkbox) {
+        totalScore += 40;
+      }
 
       if (!enerCheckbox) {
         totalScore += 50;
