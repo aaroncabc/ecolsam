@@ -209,41 +209,31 @@
       // Get the values from the select elements
       const agua = parseInt(document.getElementById('agua').value);
       const trns = parseInt(document.getElementById('trns').value);
-      const trans2 = parseInt(document.getElementById('trans2').value);
-      const energia = parseInt(document.getElementById('Energia').value);
-      const energia2 = parseInt(document.getElementById('Energia2').value);
       const alimen1 = parseInt(document.getElementById('Alimen1').value);
       const alimen2 = parseInt(document.getElementById('Alimen2').value);
       const fores = parseInt(document.getElementById('Fores').value);
       const cmEn2 = parseInt(document.getElementById('CmEn2').value);
       const prds = parseInt(document.getElementById('Prds').value);
-      const prds2 = parseInt(document.getElementById('Prds2').value);
 
       // Get the status of the checkboxes
       const agua2Checkbox = document.getElementById('agua2').checked;
       const enerCheckbox = document.getElementById('Ener').checked;
-      const ener2Checkbox = document.getElementById('Ener2').checked;
       const ener3Checkbox = document.getElementById('Ener3').checked;
       const ener4Checkbox = document.getElementById('Ener4').checked;
       const ener5Checkbox = document.getElementById('Ener5').checked;
       const prd1Checkbox = document.getElementById('Prd1').checked;
       const prd3Checkbox = document.getElementById('Prd3').checked;
-      const prd6Checkbox = document.getElementById('Prd6').checked;
       const cmEn3Checkbox = document.getElementById('CmEn3').checked;
       const cmEn4Checkbox = document.getElementById('CmEn4').checked;
 
       // Calculate the total score
-      totalScore = trns+ trans2*trns*0.2 + agua + energia + energia2 + alimen1 + alimen2 + fores + cmEn1 + cmEn2 + prds + prds2;
+      totalScore = trns+ agua + alimen1 + alimen2 + fores + cmEn2 + prds;
 
       if (agua2Checkbox) {
         totalScore += 40;
       }
 
       if (!enerCheckbox) {
-        totalScore += 50;
-      }
-
-      if (ener2Checkbox) {
         totalScore += 50;
       }
 
@@ -265,11 +255,6 @@
         totalScore += 40;
       }
 
-      if (prd2Checkbox) {
-        totalScore += -20;
-      }else{
-        totalScore += 40;
-      }
 
       if (prd3Checkbox) {
         totalScore += -10;
@@ -277,17 +262,6 @@
         totalScore += 60;
       }
 
-      if (prd4Checkbox) {
-        totalScore += -10;
-      }
-
-      if (prd5Checkbox) {
-        totalScore += -10;
-      }
-
-      if (prd6Checkbox) {
-        totalScore += -10;
-      }
 
       if (cmEn3Checkbox) {
         totalScore += -40;
