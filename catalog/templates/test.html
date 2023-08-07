@@ -79,7 +79,7 @@
                     <h4 class="category">Agua</h4>
                     <p>¿Cuanto tiempo tardo en bañarme?
                         <div>&nbsp</div>
-                        <select id="agua" class="form-control">
+                        <select  class="form-control Agua">
                             <option value="149" >Solo 5 minutos</option>
                             <option value="223">entre 5 y 10 minutos</option>
                             <option value="450">entre 10 y 20 minutos</option>
@@ -87,14 +87,19 @@
                         </select>
                     </p>
                     <p>Cuando me cepillo los dientes, ¿dejo correr el agua?
-                        <input id="agua2" type="checkbox">
+                        <div>&nbsp</div>
+                        <select  class="form-control Agua">
+                            <option value="20" >Si</option>
+                            <option value="0">No</option>
+                        </select>
                     </p>
+                    
                 </div>
                 <div class="info-box">
                     <h4 class="category">Forestal</h4>
                     <p>¿Cuantas libretas de 100 hojas usas en un semestre?
                         <div>&nbsp</div>
-                        <select id="Fores" class="form-control">
+                        <select class="form-control Forestal">
                             <option value = "58">2 a 3</option>
                             <option value = "81">3 a 4</option>
                             <option value = "105">4 a 5</option>
@@ -109,19 +114,26 @@
                     <h4 class="category">Alimentos</h4>
                     <p>En un dia normal desecho:
                         <div>&nbsp</div>
-                        <select id="Alimen1" class="form-control">
+                        <select class="form-control Alimentos">
                             <option value = "0">Nada de mi comida</option>
                             <option value = "100">Una cuarta parte de mi comida</option>
                             <option value = "150">Un tercio de mi comida</option>
-                            <option value = "200">La mitad de mi comuda</option>
+                            <option value = "200">La mitad de mi comida</option>
                         </select>
                     </p>
                     <p>de los alimentos que consumo, ¿que cantidad es organica? (frutas,vegetales,carnes,jugos aceites)
                         <div>&nbsp</div>
-                        <select id="Alimen2" class="form-control">
+                        <select class="form-control Alimentos">
                             <option value = "0">Todos</option>
                             <option value = "30">Algunos</option>
                             <option value = "60">Ninguno</option>
+                        </select>
+                    </p>
+                    <p>¿Utilizo como abono las sobras y pieles de las frutas y verduras que consumo?
+                        <div>&nbsp</div>
+                        <select class="form-control Alimentos">
+                            <option value="-20" >Si</option>
+                            <option value="60">No</option>
                         </select>
                     </p>
                 </div>
@@ -129,73 +141,215 @@
                     <h4 class="category">Compras/envios</h4>
                     <p>Tengo __ pares de zapatos
                         <div>&nbsp</div>
-                        <select id="CmEn2" class="form-control">
+                        <select class="form-control CmEn">
                             <option value = "20">2 a 3</option>
                             <option value = "60">4 a 6</option>
                             <option value = "90">7 o mas</option>
                         </select>
                     </p>
-                    <p>¿Compro o uso ropa de segunda mano(ropa que ha sido usada)?<input Id="CmEn3" type="checkbox"></p>
-                    <p>Compro ropa de solo uso es decir ropa para una sola ocasión ya sea fiesta, salida, etc.<input Id="CmEn4" type="checkbox"></p>
+                    <p>¿Compro o uso ropa de segunda mano(ropa que ha sido usada)?
+                        <div>&nbsp</div>
+                        <select class="form-control CmEn">
+                            <option value="-40" >Si</option>
+                            <option value="20">No</option>
+                        </select>
+                    </p>
+                    <p>Compro ropa de solo uso es decir ropa para una sola ocasión ya sea fiesta, salida, etc.
+                        <div>&nbsp</div>
+                        <select class="form-control CmEn">
+                            <option value="80" >Si</option>
+                            <option value="0">No</option>
+                        </select>
+                    </p>
                 </div>
 
             </div>
             <div class="info-boxes-container">
                 <div class="info-box">
                     <h4 class="category">Energia</h4>
-                    <p>¿Tengo aire acondicionado en casa? <input id="Ener3" type="checkbox"></p>
-                    <p>Apagamos las luces, los ordenadores, y la television cuando no se utilizan <input Id="Ener" type="checkbox"></p>
-                    <p>.¿Utilizo más de un dispositivo electrónico al tiempo; ya sea por tareas, entretenimiento o trabajo?(televisor, teléfono, Tablet, portátil)<input Id="Ener2" type="checkbox"></p>
-                    <p>La energía solar es aquella producida gracias a la luz o el calor del sol. Esta ayuda
-                         al medio ambiente gracias a que es inagotable y renovable, pues se obtiene por medio
-                         de paneles y espejos. Con base a lo anterior, ¿Me gustaría tener en un futuro energía
-                         de panel solar?  <input id="Ener4" type="checkbox"></p>
-                    <p>¿Dejas el cargador conectado después de cargar el teléfono?<input id="Ener5" type="checkbox"></p>
+                    <p>¿Tengo aire acondicionado en casa?
+                        <div>&nbsp</div>
+                        <select class="form-control Energia">
+                            <option value="80" >Si</option>
+                            <option value="0">No</option>
+                        </select>
+                    </p>
+                    <p>¿Cuántas horas utilizo mi aire acondicionado?
+                        <div>&nbsp</div>
+                        <select class="form-control Energia">
+                            <option value = "0">Ninguna</option>
+                            <option value = "50">1 a 3</option>
+                            <option value = "100">3 a 4</option>
+                            <option value = "200"> Mas de 4</option>
+                        </select>
+                    </p>
+                    <p>Apago las luces, los ordenadores, y la televisión cuando no las utilizo
+                        <div>&nbsp</div>
+                        <select class="form-control Energia">
+                            <option value="-20" >Si</option>
+                            <option value="40">No</option>
+                        </select>
+                    </p>
+                    <p>¿Utilizo más de un dispositivo electrónico al tiempo; ya sea por tareas, entretenimiento o trabajo? (televisor, teléfono, Tablet, portátil)
+                        <div>&nbsp</div>
+                        <select class="form-control Energia">
+                            <option value="40" >Si</option>
+                            <option value="0">No</option>
+                        </select>
+                    </p>
+                    <p>. La energía solar es aquella producida gracias a la luz o el calor del sol. Esta ayuda al medio ambiente gracias a que es inagotable y renovable, pues se obtiene por medio de paneles y espejos. Con base a lo anterior, ¿Me gustaría tener en un futuro energía de panel solar? 
+                        <div>&nbsp</div>
+                        <select class="form-control Energia">
+                            <option value="-40" >Si</option>
+                            <option value="20">No</option>
+                        </select>
+                    </p>
+                    <p>Dejo el cargador conectado después de cargar el teléfono?
+                        <div>&nbsp</div>
+                        <select class="form-control Energia">
+                            <option value="10" >Si</option>
+                            <option value="0">No</option>
+                        </select>
+                    </p>
+                    <p>¿Cuántos ventiladores tengo en casa?
+                        <div>&nbsp</div>
+                        <select class="form-control Energia">
+                            <option value = "0">Ninguno</option>
+                            <option value = "20">1 a 2</option>
+                            <option value = "80">3 a 4</option>
+                            <option value = "120"> Mas de 4</option>
+                        </select>
+                    </p>
                 </div>
                 <div class="info-box">
                     <h4 class="category">Productos</h4>
                     <p>La basura que he generado hoy podria caber en:
                         <div>&nbsp</div>
-                        <select id="Prds" class="form-control">
+                        <select class="form-control Prds">
                             <option value = "20">Una caja de zapatos</option>
                             <option value = "60">Un cubo grande</option>
                             <option value = "200">Cubo de basura</option>
                             <option value = "-50">¡No he generado basura hoy!</option>
                         </select>
                     </p>
-                    <p>Reutilizo materiales reciclables como: papel ( periódico, cuadernos, libros), latas (cerveza, gaseosas),
-                       cristales o envases de vidrio ( gaseosas, aceites, licores), plástico (envases de gaseosas retornables,
-                       botellas de jugo o agua, envases de detergentes). <input id="Prd1" type="checkbox"></p>
-                    <p>Evito los productos desechables siempre que puedo: <input id ="Prd3"type="checkbox"></p>
+                    <p>Reciclo materiales reciclables como: papel (periódico, cuadernos, libros).
+                        <div>&nbsp</div>
+                        <select class="form-control Prds">
+                            <option value="-20" >Si</option>
+                            <option value="20">No</option>
+                        </select>
+                    </p>
+                    <p>Reciclo materiales reciclables como: latas (cerveza, gaseosas, comidas).
+                        <div>&nbsp</div>
+                        <select class="form-control Prds">
+                            <option value="-20" >Si</option>
+                            <option value="20">No</option>
+                        </select>
+                    </p>
+                    <p>Reciclo materiales reciclables como: cristales o envases de vidrio (gaseosas, aceites, licores).
+                        <div>&nbsp</div>
+                        <select class="form-control Prds">
+                            <option value="-20" >Si</option>
+                            <option value="20">No</option>
+                        </select>
+                    </p>
+                    <p>Reciclo materiales reciclables como: plástico (envases de gaseosas retornables, botellas de jugo o agua, envases de detergentes).
+                        <div>&nbsp</div>
+                        <select class="form-control Prds">
+                            <option value="-20" >Si</option>
+                            <option value="20">No</option>
+                        </select>
+                    </p>
+                    <p>¿Qué tan seguido compro bebidas empacadas de un solo uso(jugos en cajas, botellas de agua, gaseosa)? 
+                        <div>&nbsp</div>
+                        <select class="form-control Prds">
+                            <option value="-20" >Si</option>
+                            <option value="20">No</option>
+                        </select>
+                    </p>
+                    <p>Evito los productos desechables siempre que puedo: 
+                        <div>&nbsp</div>
+                        <select class="form-control Prds">
+                            <option value="-20" >Si</option>
+                            <option value="20">No</option>
+                        </select>
+                    </p>
                 </div>
             </div>
             <div class="info-boxes-container">
                 <div class="info-box">
                     <h4 class="category">Conocimiento</h4>
-                    <p>¿Conoces páginas o sitios que hablen sobre la huella de carbono ? <input type="checkbox"></p>
-                    <p>¿Sabes que es la huella de carbono y su uso?<input type="checkbox"></p>
-                    <p>¿Conocés las consecuencias de NO aplicar la huella de carbono?<input type="checkbox"></p>
+                    <p> ¿Conoces páginas o sitios que hablen sobre la huella de carbono ?
+                        <div>&nbsp</div>
+                        <select class="form-control">
+                            <option "" >Si</option>
+                            <option >No</option>
+                        </select>
+                    </p>
+                    <p> ¿Sabes que es la huella de carbono y su uso?
+                        <div>&nbsp</div>
+                        <select class="form-control">
+                            <option >Si</option>
+                            <option >No</option>
+                        </select>
+                    </p>
+                    <p> ¿Conocés las consecuencias de NO aplicar la huella de carbono?
+                        <div>&nbsp</div>
+                        <select class="form-control">
+                            <option  >Si</option>
+                            <option >No</option>
+                        </select>
+                    </p>
                 </div>
                 <div class="info-box">
                     <h4 class="category">Transporte</h4>
                     <p>¿Que tipo de transporte utilizas mas seguido
                         <div>&nbsp</div>
-                        <select id="trns" class="form-control">
+                        <select class="form-control Trns">
                             <option value = "100">Bus</option>
                             <option value = "200">Auto</option>
                             <option value = "120">Moto</option>
                             <option value = "0" >Bicicleta</option>
                         </select>
                     </p>
+                    <p> ¿Tengo vehículo propio en casa? (moto, carro, bicicleta)
+                        <div>&nbsp</div>
+                        <select class="form-control Trns">
+                            <option value="100" >Si</option>
+                            <option value="0">No</option>
+                        </select>
+                    </p>
                 </div>
-
             </div>
+            <div class="info-boxes-container">
+                <div class="info-box">
+                    <h4 class="category">Vivienda</h4>
+                    <p>Número de habitaciones que hay en mi casa:
+                        <div>&nbsp</div>
+                        <select class="form-control Viv" >
+                            <option value="10">Menos de 2 habitaciones </option>
+                            <option value="80">De 2 a 3 habitaciones </option>
+                            <option value="140">De 4 a 6 habitaciones </option>
+                            <option value="200">De 7 o más habitaciones </option>
+                        </select>
+                    </p>
+                    <p> Compartimos nuestra casa con miembros que no son de la familia   
+                        <div>&nbsp</div>
+                        <select class="form-control Viv">
+                            <option value="-50" >Si</option>
+                            <option value="0">No</option>
+                        </select>
+                    </p>
+                </div>
+            </div>
+            <h3 id="Ptotal">Puntaje total: </h3>
+            <h4 id="InfoHuella"></h4>
             <button class="form-control" onclick="calculateScore()">Calcular mi huella</button>
             <div>&nbsp</div>
             <div>&nbsp</div>
             <button id='save' class="form-control" >Haz parte de la huella COLSAM</button>
             <div>&nbsp</div>
-            <h3 id="Ptotal">Puntaje total: </h3>
+            
         </div>
     </div>
 </div>
@@ -203,81 +357,52 @@
     const Button = document.getElementById('save');
     Button.disabled= true;
     let totalScore=0
+    const Energia = document.querySelectorAll(".Ener");
+    const Agua = document.querySelectorAll(".Agua");
+    const Alimentos = document.querySelectorAll(".Alimentos");
+    const ComEnv = document.querySelectorAll(".CmEn");
+    const Productos = document.querySelectorAll(".Prds");
+    const Transporte = document.querySelectorAll(".Trns");
+    const Vivienda = document.querySelectorAll(".Viv");
     let href = "{% url 'send' total_score=0 %}";
     // Function to calculate the total score and update the button
     function calculateScore() {
-      // Get the values from the select elements
-      const agua = parseInt(document.getElementById('agua').value);
-      const trns = parseInt(document.getElementById('trns').value);
-      const alimen1 = parseInt(document.getElementById('Alimen1').value);
-      const alimen2 = parseInt(document.getElementById('Alimen2').value);
-      const fores = parseInt(document.getElementById('Fores').value);
-      const cmEn2 = parseInt(document.getElementById('CmEn2').value);
-      const prds = parseInt(document.getElementById('Prds').value);
-
-      // Get the status of the checkboxes
-      const agua2Checkbox = document.getElementById('agua2').checked;
-      const enerCheckbox = document.getElementById('Ener').checked;
-      const ener3Checkbox = document.getElementById('Ener3').checked;
-      const ener4Checkbox = document.getElementById('Ener4').checked;
-      const ener5Checkbox = document.getElementById('Ener5').checked;
-      const prd1Checkbox = document.getElementById('Prd1').checked;
-      const prd3Checkbox = document.getElementById('Prd3').checked;
-      const cmEn3Checkbox = document.getElementById('CmEn3').checked;
-      const cmEn4Checkbox = document.getElementById('CmEn4').checked;
-
-      // Calculate the total score
-      totalScore = trns+ agua + alimen1 + alimen2 + fores + cmEn2 + prds;
-
-      if (agua2Checkbox) {
-        totalScore += 40;
-      }
-
-      if (!enerCheckbox) {
-        totalScore += 50;
-      }
-
-      if (ener3Checkbox) {
-        totalScore += 50;
-      }
-
-      if (ener4Checkbox) {
-        totalScore += -20;
-      }
-
-      if (ener5Checkbox) {
-        totalScore += 30;
-      }
-
-      if (prd1Checkbox) {
-        totalScore += -20;
-      }else{
-        totalScore += 40;
-      }
-
-
-      if (prd3Checkbox) {
-        totalScore += -10;
-      }else{
-        totalScore += 60;
-      }
-
-
-      if (cmEn3Checkbox) {
-        totalScore += -40;
-      }else{
-        totalScore += 60;
-      }
-
-      if (cmEn4Checkbox) {
-        totalScore += 40;
+        Energia.forEach((element) => {
+            totalScore += parseInt(element.value);
+        });
+        Agua.forEach((element) => {
+            totalScore += parseInt(element.value);
+        });
+        Alimentos.forEach((element) => {
+            totalScore += parseInt(element.value);
+        });
+        ComEnv.forEach((element) => {
+            totalScore += parseInt(element.value);
+        });
+        Productos.forEach((element) => {
+            totalScore += parseInt(element.value);
+        });
+        Transporte.forEach((element) => {
+            totalScore += parseInt(element.value);
+        });
+        Vivienda.forEach((element) => {
+            totalScore += parseInt(element.value);
+        });
+        const text = document.getElementById('Ptotal');
+        const result = document.getElementById('InfoHuella');
+        
+        if(totalScore<=1360){
+            result.textContent = 'Requieres menos de 0.14 hectáreas globales (hag) y vives dentro de los límites del Planeta: ¡¡Bien hecho!! Para satisfacer tu patrón de consumo requieres entre:0.1 hag ─ 0.14 hag';
         }
-
-      const text = document.getElementById('Ptotal');
-      text.textContent = 'Puntaje total: ' + totalScore;
-      Button.disabled = false;
-      href = href.replace('0', totalScore)
-      console.log(href)
+        if(totalScore>1360 && totalScore<=1900){
+            result.textContent = '¡¡Cuidado!! Tu impacto ambiental individual está por arriba del umbral de sostenibilidad del Planeta. Para satisfacer tu patrón de consumo requieres entre: 0.14 hag ─ 0.19 hag';
+        }
+        if(totalScore>2000){
+            result.textContent = 'Tu ritmo de vida es completamente insostenible, tu Huella Ecológica es muy superior a 0.14 hectáreas globales. Si todo el mundo consumiera los mismos recursos que consumes tú, sería necesario tener al menos otro Planeta Tierra que nos apoye para mantener a toda la población.';
+        }
+        text.textContent = 'Puntaje total: ' + totalScore;
+        Button.disabled = false;
+        href = href.replace('0', totalScore)
     }
 
     function submitScore() {
