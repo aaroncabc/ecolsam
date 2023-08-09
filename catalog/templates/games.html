@@ -9,6 +9,35 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <style>
+      /* Style for the grid container */
+      .grid-container {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 10px;
+          max-width: 600px;
+          margin: 0 auto;
+          padding: 20px;
+      }
+
+      /* Style for grid items */
+      .grid-item {
+          font-size: 20px;
+          font-weight: 700;
+          color: white;
+          padding: 15px;
+          text-align: center;
+          background-color: var(--main-color);
+          border: 1px solid #ccc;
+          transition: background-color 0.3s ease;
+      }
+
+      /* Hover effect */
+      .grid-item:hover {
+          background-color: #007bff; /* Change to your desired hover color */
+          color: #fff; /* Change text color for better visibility */
+          cursor: pointer;
+      }
+
     a:hover{
         text-decoration: none;
     }
@@ -45,38 +74,14 @@
 <div>&nbsp</div>
 
 <div class="info">
-    <div class="info container">
-        <div class="info-box">
-            <h2>Juega</h2>
-            <div>&nbsp</div>
-            <div>&nbsp</div>
-            <h2>y aprende</h2>
-        </div>
-    </div>
+  <h2 class="heading" style="line-height: 70px;">Juega y aperende </h2>
 </div>
 <div>&nbsp</div>
 <div>&nbsp</div>
-<div class="container">
-    <div id="carouselExample" class="carousel slide" data-interval="false">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <iframe src="https://es.educaplay.com/juego/15021654-crucigrama_eco_salm.html" width="100%" height="500" frameborder="0" ></iframe>
-        </div>
-        <div class="carousel-item">
-          <iframe src="https://es.educaplay.com/juego/15021541-sopa_de_letras_eco_salm.html" width="100%" height="500" frameborder="0" ></iframe>
-        </div>
-        <div class="carousel-item">
-          <iframe src="https://es.educaplay.com/juego/14903193-huella_de_carbono.html" width="100%" height="500" frameborder="0" ></iframe>
-        </div>
-      </div>
-      <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-  </div>
+<div class="grid-container">
+  {% for url in urls  %}
+  <a class="grid-item" href="{% url 'play' id=url.id %}">{{url.name}}</a>
+  {% endfor %}
+
+</div>
 {% endblock %}

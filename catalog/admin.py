@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django import forms
-from .models import Post, Image, User, TypeUser
+from .models import Post, Image, User, TypeUser,Url
 
 # Create an inline formset for the Image model
 ImageFormSet = forms.inlineformset_factory(Post, Image, fields=('image',), extra=1, max_num=10)
@@ -18,3 +18,4 @@ class PostAdmin(admin.ModelAdmin):
 
 admin.site.register(User)
 admin.site.register(TypeUser)
+admin.site.register(Url)

@@ -44,3 +44,9 @@ class User(models.Model):
     CarbonFootprint = models.IntegerField(default=0)
     def __str__(self):
         return self.name
+
+class Url(models.Model):
+    name = models.CharField(max_length=100)
+    url = models.CharField(max_length=100)
+    def __str__(self):
+        return self.name

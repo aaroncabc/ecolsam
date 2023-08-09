@@ -1,7 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<head>
+  <link rel="stylesheet" href="{% static 'catalog/css/inicio.css' %}">
+</head>
 <style>
+  .Inicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
     .bar {
         display: flex;
         align-items: center;
@@ -43,6 +51,15 @@
         font-size: 12px;
         color: #888;
       }
+      .btn-box {
+        text-align: center;
+        display:inline-block;
+      }
+      
+      .btn {
+        /* Your button styles here */
+        padding-top: 5px; /* Ensures the button respects text alignment */
+      }
 </style>
 <div class="info">
     {% for post in Posts %}
@@ -60,5 +77,20 @@
         </div>
     </div>
     {% endfor %}
-</div>
+    <section class="Inicio">
+      <div class="inicio-content">
+        <h1>Haz parte <span>de la</span></h1>
+        <div class="text-animate">
+           <h3>Huella COLSAM</h3>
+        </div>
+        <p>
+            <div class="btn-box" style="">
+                <a href="{% url 'test' %}" class="btn">Registra tu huella</a>
+            </div>
+      
+      </div>
+      </section>
+  </div>
+
+
 {% endblock %}

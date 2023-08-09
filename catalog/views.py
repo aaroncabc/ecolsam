@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse, JsonResponse
-from .models import Post,TypeUser, User
+from .models import Post,TypeUser, User, Url
 import json
 from django.db.models import Sum,Value
 from django.db.models.functions import Coalesce
@@ -21,7 +21,13 @@ def send(request,total_score):
     return render(request,'sentFootprint.html',{'total_score':total_score,'types':types,'mesagge':''})
 
 def games(request):
-    return render(request,'games.html')
+    urls=Url.objects.all()
+    return render(request,'games.html',{'urls':urls})
+
+def play(request,id):
+    game = Url.objects.get(id=id)
+    return render(request,'play.html',{'game':game})
+    
 
 def blog(request):
     posts = Post.objects.all()

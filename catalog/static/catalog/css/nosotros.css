@@ -76,11 +76,11 @@ header ul li a:hover{
 .info h2{
     margin-bottom: 300rem;
     font-size: 70px;
-    line-height: 7px;
+    line-height: 70px;
     color: #46aa39;
     text-transform: uppercase;
     text-align: center;
-    padding: 0 350px;
+    padding: 0px;
     margin-bottom: 15px;
     font-weight: 900;
 }
